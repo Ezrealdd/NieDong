@@ -110,7 +110,7 @@ function getToken(phone){    //获取token去请求验证码,参数是电话号�
                       console.log(res);
                       checkCode=res.data.result.code;
                       console.log(checkCode);
-
+                      console.log(ddddd);
                   }
 
               });
