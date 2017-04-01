@@ -1,0 +1,75 @@
+/**index.wxss**/
+@import "../common/lib/weui.wxss";
+.login-form{
+	margin-top: 150rpx;
+}
+.login-title {
+  font-size: 48rpx;
+  font-weight: bold;
+}
+
+.login-head{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 150rpx;
+}
+.login-body{
+	margin-top: 27%;
+}
+#login-btn-primary{
+	color: #ffffff;
+	background-color: #ffab27;
+	margin-top: 10%;
+}
+.login-btn-text{
+	color: #313649;
+	font-size: 20px;
+}
+.login-btn{
+	width: 70%;
+	margin-left: 15%;
+}
+#phone,#check-number{
+	width: 70%;
+	margin-left: 0;
+}
+.label-phone,.label-check-number{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+#check-number-btn{
+	font-size: 69%;
+	width: 100%;
+	margin-left: 0;
+	margin-right: 0;
+	padding-left: 0;
+	padding-right: 0;
+}
+.check-number,.check-number-btn{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+}
+.check-number{
+	margin-top: 5%;
+}
+#phone,#check-number,#check-number-btn{
+	border: 1rpx solid #ffab27;
+}
+#check-number-btn{
+	color: #ffab27;
+}
+.check-number{
+	width: 70%;
+}
+#check-number-btn{
+	margin-left: 60%;
+	margin-top: 15%;
+}
+#phone,#check-number{
+	display: block;
+	height: 3.0rem;
+}

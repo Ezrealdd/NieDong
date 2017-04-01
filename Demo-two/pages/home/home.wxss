@@ -1,0 +1,125 @@
+/**index.wxss**/
+@import "../common/lib/weui.wxss";
+.home-page{
+    padding: 20%;
+}
+.input-style{
+    border: 1rpx solid #ffab27
+}
+.weui-cells::after{
+    content: "";
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 1px;
+    border-bottom: 1rpx solid #ffab27;
+    color: #D9D9D9;
+}
+.btn-area{
+    margin-top: 70rpx;
+}
+button-hover[type="primary"]{
+    background-color: #996600;
+}
+.home-body{
+    margin-top: 150rpx;
+}
+button[type="primary"]{
+     color: #000000;
+     background-color: #ffab27;
+ }
+.button-hover[type="primary"]{
+     color: #000000;
+     background-color: #996600;
+ }
+.home-footer{
+    display: flex;
+    justify-content: center;
+}
+#locationName,#destinationName{
+    background-color: #ffffff;
+    border-style: solid;
+    border-color: #ffab27;
+    font-size: 14px;
+}
+.btn::after{
+    border: 1px solid rgba(0,0,0,0);
+}
+.head-btn{
+    width: 32%;
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: -34%;
+}
+.user-number{
+    position: fixed;
+    margin-top: 60%;
+}
+@media(max-width: 320px){
+    .head-btn{
+        width: 38%;
+    }
+}
+@media(max-height: 568px){
+    .user-number{
+        position: fixed;
+        margin-top: 50%;
+    }
+}
+@media(max-height: 480px){
+    .user-number{
+        position: fixed;
+        margin-top: 23%;
+    }
+
+}
+
+.drawer-screen{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #000;
+    opacity: 0.2;
+    overflow: hidden;
+    z-index: 1000;
+    color: #fff;
+}
+.drawer-attr-box{
+    height: 100%;
+    width: 70%;
+    overflow: hidden;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 2000;
+    background: #fff;
+}
+.drawer-attr-contnet{
+    padding: 20rpx;
+    height: 600rpx;
+    overflow-y: scroll;
+}
+.drawer-image{
+    width: 300rpx;
+    height: 300rpx;
+    text-align: center
+}
+.drawer-desc{
+    font-size: 26rpx;
+    margin: 20rpx;
+}
+.btn{
+    width: 80%;
+    padding: 15rpx 0;
+    border-radius: 10rpx;
+    text-align: center;
+}
+.open-btn{
+    margin: 40rpx 10%;
+    border-radius: 10rpx;
+    background: #20bb21;
+    color: #fff;
+
+}

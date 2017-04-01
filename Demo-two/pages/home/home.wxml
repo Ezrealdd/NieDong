@@ -1,0 +1,44 @@
+<!--主页面（叫车页面）-->
+<page>
+<view class="home-page">
+    <view class="home-head"><!--个人中心按钮-->
+        <view class="drawer-screen" bindtap="hideModal" wx:if="{{showModalStatus}}"></view>
+        <view animation="{{animationData}}" class="drawer-attr-box" wx:if="{{showModalStatus}}">
+            <view class="drawer-attr-content">
+                <view class="text-center">
+                    <image class="drawer-image" src="../../images/example.png"></image>
+                </view>
+                <view class="drawer-desc">{{testData}}</view>
+                <view class="drawer-desc">555555555</view>
+            </view>
+        </view>
+
+        <button class="head-btn" bindtap="showModal">个人中心</button>
+    </view>
+
+    <view class="home-body">
+        <form catchsunmit="openLocation">
+            <view class="weui-cells weui-cells_after-title" catchtap="choseLocation">
+                <view class="weui-cell_bd">
+                    <button id="locationName" type="primary" formType="submit">{{location.name}}</button>
+                </view>
+            </view>
+
+            <view class="weui-cells weui-cessl_after-title" catchtap="choseDestination">
+                 <view class="weui-cell_bd">
+                    <button id="destinationName" type="primary" formType="submit">{{destination.name}}</button>
+                 </view>
+            </view>
+
+            <view class="btn-area">
+                <button id="makeCall" type="primary" formType="submit">招  车</button>
+            </view>
+        </form>
+    </view>
+
+    <view class="home-footer">
+        <text class="user-number">客服电话123456</text>
+    </view>
+</view>
+</page>
+

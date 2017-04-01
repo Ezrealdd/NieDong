@@ -1,0 +1,13 @@
+{
+"pages":[
+	"pages/home/home",
+	"pages/modal/modal",
+	"pages/map/map"
+	],
+"window":{
+	"backgroundTextStyle" : "light",
+	"navigationBarBackgroundColor": "#000",
+	"navigationBarTitleText": "刹一脚",
+	"navigationBarTitleStyle": "black"
+}
+}
