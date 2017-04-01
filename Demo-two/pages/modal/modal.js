@@ -205,6 +205,16 @@ Page({
                   method: "POST",
                   success: function(res){
                       console.log(res);
+                      wx.setStorage({
+                      	  key : "userInfo",
+						  data : res
+					  });
+                      wx.getStorage({
+                      	  key : 'userInfo',
+						  success: function(back){
+                      	  	  console.log(back.data)
+						  }
+					  })
 
 
                   }
