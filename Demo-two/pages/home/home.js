@@ -16,7 +16,8 @@ Page({
 			longitude: '',
             latitude: '',
             name: '请选择目的地'
-		}
+		},
+		userInfo: ''
 	},
 	showModal: function(){
 		//显示覆盖层
@@ -80,7 +81,7 @@ Page({
 		var that=this
 		wx.chooseLocation({
 			success: function(res){
-				//console.log(res)
+				console.log(res)
 				that.setData({
 					hasLocation: true,
 					location:{
@@ -103,7 +104,7 @@ Page({
         var that=this
         wx.chooseLocation({
             success: function(res){
-                //console.log(res)
+                console.log(res)
                 that.setData({
                     hasLocation: true,
                     destination:{
@@ -120,6 +121,16 @@ Page({
                 console.log('选择失败')
             }
         })
+    },
+	makeCall : function (e) {
+         var that = this;
+         wx.getStorage({
+         	key : "username",
+			success : function(res) {
+					console.log(res.data);
+		      }
+		 });
+
     }
 
 

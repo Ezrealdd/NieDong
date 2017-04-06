@@ -21,71 +21,55 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="app.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="12" column="1" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="modal.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/pages/modal/modal.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="287">
-              <caret line="209" column="34" lean-forward="false" selection-start-line="209" selection-start-column="34" selection-end-line="209" selection-end-column="34" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="modal.wxml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pages/modal/modal.wxml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="21" column="15" lean-forward="false" selection-start-line="21" selection-start-column="15" selection-end-line="21" selection-end-column="15" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="md5_copy.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/utils/md5_copy.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1980">
-              <caret line="110" column="12" lean-forward="false" selection-start-line="110" selection-start-column="9" selection-end-line="110" selection-end-column="12" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="util.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/utils/util.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="903">
-              <caret line="112" column="41" lean-forward="false" selection-start-line="112" selection-start-column="41" selection-end-line="112" selection-end-column="41" />
+            <state relative-caret-position="2088">
+              <caret line="118" column="0" lean-forward="false" selection-start-line="118" selection-start-column="0" selection-end-line="118" selection-end-column="0" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
-                <element signature="e#4208#6948#0" expanded="false" />
+                <element signature="e#4167#6907#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="home.wxml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pages/home/home.wxml">
+      <file leaf-file-name="home.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pages/home/home.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="594">
-              <caret line="33" column="69" lean-forward="false" selection-start-line="33" selection-start-column="63" selection-end-line="33" selection-end-column="69" />
+            <state relative-caret-position="324">
+              <caret line="18" column="10" lean-forward="false" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="10" />
+              <folding>
+                <element signature="e#1251#1542#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WebIM.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/utils/WebIM.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-3327">
+              <caret line="47" column="0" lean-forward="true" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="modal.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pages/modal/modal.json">
+      <file leaf-file-name="strophe.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/utils/strophe.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="29286">
+              <caret line="1637" column="29" lean-forward="false" selection-start-line="1637" selection-start-column="26" selection-end-line="1637" selection-end-column="29" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/utils/sdk/index.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -97,21 +81,54 @@
       <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="8" column="15" lean-forward="false" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="15" />
+            <state relative-caret-position="-1062">
+              <caret line="61" column="40" lean-forward="true" selection-start-line="61" selection-start-column="40" selection-end-line="61" selection-end-column="40" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="home.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pages/home/home.js">
+      <file leaf-file-name="login.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pages/login/login.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1169">
-              <caret line="122" column="5" lean-forward="false" selection-start-line="122" selection-start-column="5" selection-end-line="122" selection-end-column="5" />
+            <state relative-caret-position="503">
+              <caret line="201" column="0" lean-forward="true" selection-start-line="201" selection-start-column="0" selection-end-line="201" selection-end-column="0" />
               <folding>
-                <element signature="e#1235#1526#0" expanded="false" />
+                <element signature="n#!!doc" expanded="true" />
+                <element signature="e#927#2330#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="connection.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/utils/sdk/src/connection.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="6066">
+              <caret line="338" column="34" lean-forward="false" selection-start-line="338" selection-start-column="34" selection-end-line="338" selection-end-column="34" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="utils.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/utils/sdk/src/utils.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WebIMConfig.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/utils/WebIMConfig.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-181">
+              <caret line="36" column="16" lean-forward="false" selection-start-line="36" selection-start-column="16" selection-end-line="36" selection-end-column="16" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -123,6 +140,11 @@
       <find>button-hover</find>
       <find>formatTime</find>
       <find>login-btn</find>
+      <find>ts</find>
+      <find>new WebIM.connection</find>
+      <find>log</find>
+      <find>conn</find>
+      <find>conn.listen</find>
     </findStrings>
   </component>
   <component name="IdeDocumentHistory">
@@ -142,7 +164,6 @@
         <option value="$PROJECT_DIR$/utils/hxTest.js" />
         <option value="$PROJECT_DIR$/pages/map/map.wxml" />
         <option value="$PROJECT_DIR$/pages/map/map.js" />
-        <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/pages/index/index.wxss" />
         <option value="$PROJECT_DIR$/pages/home/home.wxss" />
         <option value="$PROJECT_DIR$/pages/index/index.wxml" />
@@ -150,11 +171,15 @@
         <option value="$PROJECT_DIR$/pages/index/index.js" />
         <option value="$PROJECT_DIR$/utils/api.js" />
         <option value="$PROJECT_DIR$/pages/modal/modal.wxml" />
-        <option value="$PROJECT_DIR$/pages/home/home.wxml" />
-        <option value="$PROJECT_DIR$/pages/home/home.js" />
         <option value="$PROJECT_DIR$/utils/util.js" />
-        <option value="$PROJECT_DIR$/pages/modal/modal.js" />
+        <option value="$PROJECT_DIR$/pages/home/home.wxml" />
         <option value="$PROJECT_DIR$/app.json" />
+        <option value="$PROJECT_DIR$/pages/home/home.js" />
+        <option value="$PROJECT_DIR$/utils/WebIMConfig.js" />
+        <option value="$PROJECT_DIR$/utils/WebIM.js" />
+        <option value="$PROJECT_DIR$/pages/modal/modal.js" />
+        <option value="$PROJECT_DIR$/app.js" />
+        <option value="$PROJECT_DIR$/pages/login/login.js" />
       </list>
     </option>
   </component>
@@ -165,10 +190,54 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="442" />
-    <option name="y" value="370" />
+    <option name="x" value="803" />
+    <option name="y" value="123" />
     <option name="width" value="1506" />
     <option name="height" value="857" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+          <State>
+            <id>CSS</id>
+          </State>
+          <State>
+            <id>Code style issuesCSS</id>
+          </State>
+          <State>
+            <id>Control flow issuesJavaScript</id>
+          </State>
+          <State>
+            <id>DOM issuesJavaScript</id>
+          </State>
+          <State>
+            <id>General</id>
+          </State>
+          <State>
+            <id>GeneralJavaScript</id>
+          </State>
+          <State>
+            <id>HTML</id>
+          </State>
+          <State>
+            <id>Invalid elementsCSS</id>
+          </State>
+          <State>
+            <id>JavaScript</id>
+          </State>
+          <State>
+            <id>Probable bugsCSS</id>
+          </State>
+          <State>
+            <id>Pug/Jade</id>
+          </State>
+        </expanded-state>
+      </profile-state>
+    </entry>
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -186,6 +255,7 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -226,21 +296,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="modal" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Demo-two" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Demo-two" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pages" />
+              <option name="myItemId" value="login" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -272,20 +328,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="components" />
+              <option name="myItemId" value="pages" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Font" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
     <property name="js.eslint.eslintPackage" value="" />
+    <property name="HbShouldOpenHtmlAsHb" value="" />
   </component>
   <component name="RunManager" selected="Compound.Unnamed">
     <configuration default="true" type="ChromiumRemoteDebugType" factoryName="Chromium Remote">
@@ -390,12 +446,13 @@
       <workItem from="1490232670662" duration="13339000" />
       <workItem from="1490318891206" duration="37727000" />
       <workItem from="1490940849945" duration="25232000" />
-      <workItem from="1491035349304" duration="567000" />
+      <workItem from="1491035349304" duration="42475000" />
+      <workItem from="1491440892853" duration="7728000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="263381000" />
+    <option name="totallyTimeSpent" value="313017000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -407,7 +464,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="442" y="370" width="1506" height="857" extended-state="0" />
+    <frame x="803" y="123" width="1506" height="857" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11677852" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -439,27 +496,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/pages/modal/modal.wxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/modal/modal.wxss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/index/index.js" />
-    <entry file="file://$PROJECT_DIR$/pages/index/index.wxml" />
-    <entry file="file://$PROJECT_DIR$/pages/index/index.wxss" />
-    <entry file="file://$PROJECT_DIR$/pages/index/index.json" />
-    <entry file="file://$PROJECT_DIR$/pages/index/index.js" />
-    <entry file="file://$PROJECT_DIR$/pages/index/index.wxml" />
-    <entry file="file://$PROJECT_DIR$/pages/index/index.wxml" />
     <entry file="file://$PROJECT_DIR$/pages/index/index.wxml" />
     <entry file="file://$PROJECT_DIR$/pages/index/index.json" />
     <entry file="file://$PROJECT_DIR$/pages/modal/index.json" />
@@ -480,13 +516,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/common/index.wxss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pages/common/lib/weui.wxss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-17535">
@@ -494,23 +523,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/modal/modal.wxss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="12" column="10" lean-forward="false" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/modal/modal.wxss" />
     <entry file="file://$PROJECT_DIR$/../md5.js" />
     <entry file="file://$PROJECT_DIR$/utils/md5.js" />
     <entry file="file://$PROJECT_DIR$/../xiaochengxu-modal-master/components/wux.js" />
-    <entry file="file://$PROJECT_DIR$/components/toast.wxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="11" lean-forward="true" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/components/wux.js" />
     <entry file="file://$PROJECT_DIR$/../Demo-one/pages/logs/logs.js" />
     <entry file="file://F:/加密算法/Node/demo.js">
@@ -550,28 +566,8 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/utils/hxTest.js" />
-    <entry file="file://$PROJECT_DIR$/pages/map/map.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/map/map.wxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="295" lean-forward="false" selection-start-line="0" selection-start-column="295" selection-end-line="0" selection-end-column="295" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/map/map.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="12" column="16" lean-forward="false" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/map/map.json" />
+    <entry file="file://$PROJECT_DIR$/pages/map/map.js" />
     <entry file="file://$PROJECT_DIR$/pages/index/index.wxss" />
     <entry file="file://$PROJECT_DIR$/pages/home/home.wxss">
       <provider selected="true" editor-type-id="text-editor">
@@ -580,25 +576,67 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="8" column="15" lean-forward="false" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/utils/apiTest.js" />
     <entry file="file://$PROJECT_DIR$/utils/md5_copy.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1980">
           <caret line="110" column="12" lean-forward="false" selection-start-line="110" selection-start-column="9" selection-end-line="110" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pages/index/index.wxml" />
-    <entry file="file://$PROJECT_DIR$/pages/modal/modal.json">
+    <entry file="file://$PROJECT_DIR$/pages/modal/modal.json" />
+    <entry file="file://$PROJECT_DIR$/pages/index/index.js" />
+    <entry file="file://$PROJECT_DIR$/utils/api.js" />
+    <entry file="file://$PROJECT_DIR$/pages/modal/modal.wxml" />
+    <entry file="file://$PROJECT_DIR$/pages/map/map.wxml" />
+    <entry file="file://$PROJECT_DIR$/app.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="11" column="1" lean-forward="false" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/common/foot.wxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/common/head.wxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/common/index.wxss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-883">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/toast.wxml" />
+    <entry file="file://$PROJECT_DIR$/pages/home/home.wxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="413">
+          <caret line="33" column="88" lean-forward="false" selection-start-line="33" selection-start-column="88" selection-end-line="33" selection-end-column="88" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/home/home.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="18" column="10" lean-forward="false" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="10" />
+          <folding>
+            <element signature="e#1251#1542#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/sdk/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -606,58 +644,78 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/index/index.js" />
-    <entry file="file://$PROJECT_DIR$/utils/api.js" />
-    <entry file="file://$PROJECT_DIR$/pages/modal/modal.wxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="21" column="15" lean-forward="false" selection-start-line="21" selection-start-column="15" selection-end-line="21" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/home/home.wxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="33" column="69" lean-forward="false" selection-start-line="33" selection-start-column="63" selection-end-line="33" selection-end-column="69" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/utils/util.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="903">
-          <caret line="112" column="41" lean-forward="false" selection-start-line="112" selection-start-column="41" selection-end-line="112" selection-end-column="41" />
+        <state relative-caret-position="2088">
+          <caret line="118" column="0" lean-forward="false" selection-start-line="118" selection-start-column="0" selection-end-line="118" selection-end-column="0" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
-            <element signature="e#4208#6948#0" expanded="false" />
+            <element signature="e#4167#6907#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/home/home.js">
+    <entry file="file://$PROJECT_DIR$/utils/sdk/src/connection.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1169">
-          <caret line="122" column="5" lean-forward="false" selection-start-line="122" selection-start-column="5" selection-end-line="122" selection-end-column="5" />
+        <state relative-caret-position="6066">
+          <caret line="338" column="34" lean-forward="false" selection-start-line="338" selection-start-column="34" selection-end-line="338" selection-end-column="34" />
           <folding>
-            <element signature="e#1235#1526#0" expanded="false" />
+            <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app.json">
+    <entry file="file://$PROJECT_DIR$/utils/sdk/src/utils.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="12" column="1" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/modal/modal.js">
+    <entry file="file://$PROJECT_DIR$/utils/strophe.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="209" column="34" lean-forward="false" selection-start-line="209" selection-start-column="34" selection-end-line="209" selection-end-column="34" />
+        <state relative-caret-position="29286">
+          <caret line="1637" column="29" lean-forward="false" selection-start-line="1637" selection-start-column="26" selection-end-line="1637" selection-end-column="29" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/modal/modal.js" />
+    <entry file="file://$PROJECT_DIR$/utils/WebIM.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3327">
+          <caret line="47" column="0" lean-forward="true" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/WebIMConfig.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-181">
+          <caret line="36" column="16" lean-forward="false" selection-start-line="36" selection-start-column="16" selection-end-line="36" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1062">
+          <caret line="61" column="40" lean-forward="true" selection-start-line="61" selection-start-column="40" selection-end-line="61" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/login/login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="503">
+          <caret line="201" column="0" lean-forward="true" selection-start-line="201" selection-start-column="0" selection-end-line="201" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#927#2330#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

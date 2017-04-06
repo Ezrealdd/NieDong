@@ -1,61 +1,22 @@
-/*var app = getApp()
-Page({
-	showModal: function(){
-		//显示遮罩层
-		var animation = wx.createAnimation({
-			duration: 200,
-            timingFunction: "linear",
-			dalay: 0
-		})
-		this.animation = animation
-		animation.translateX(-300).step()
-		this.setData({
-			animationData: animation.export(),
-			showModalStatus: true
-		})
-		setTimeout(function() {
-			animation.translateX(0).step()
-			this.setData({
-				animationData: animation.export()
-			})
-		}.bind(this), 200)
-	},
-	hideModal: function(){
-		//隐藏遮罩层
-		var animation = wx.createAnimation({
-			duration: 200,
-			timingFunction: "linear",
-			delay: 0
-		})
-		this.animation = animation
-		animation.translateX(-300).step()
-		this.setData({
-			animationData: animation.export(),
-		})
-		setTimeout(function() {
-			animation.translateX(0).step()
-			this.setData({
-				animationData: animation.export(),
-				showModalStatus: false
-			})
-		}.bind(this), 200)
-	}
-
-})*/
-
-//index.js
+/*
+*  登录页面
+* */
 var getApi=require('../../utils/util.js')   //获取验证码api
 var mdCopy=require('../../utils/md5_copy.js')
+var strophe = require('../../utils/strophe.js')
+var WebIM = require('../../utils/WebIM.js')
+var WebIM = WebIM.default
 var app = getApp()  //获取应用实例
 Page({
 	data: {
       motto: '登录',
-	  pickerHidden: true,
-	  chosen: '',
+/*	  pickerHidden: true,
+	  chosen: '',*/
 	  userPhone: '',
-	  checkNumber: ''
+	  checkNumber: '',
+      grant_type: ''
   },
-  pickerConfirm: function(e){
+/*  pickerConfirm: function(e){
 		this.setData({
 			pickerHidden: true
 		})
@@ -72,8 +33,10 @@ Page({
   	this.setData({
   		pickerHidden: false
 	})
+  },*/
+  onLoad: function () {
+	  //this.login()
   },
-
   userPhoneInput: function(e){
   	this.setData({
   		userPhone: e.detail.value
@@ -87,7 +50,7 @@ Page({
   },
 
 
-  formSubmit: function(e){
+/*  formSubmit: function(e){
   	var that = this
 	console.log(that.data.userPhone);
 	var testCode =  getApi.getToken(that.data.userPhone);
@@ -97,7 +60,7 @@ Page({
   	//console.log(timestamp)
 	//console.log(getApi.randomString(12))
 	//var tokenTest = getApi.createSign()
-	  /*wx.login({
+	  /!*wx.login({
 	  	success: function(e){
 	  		console.log(e);
 
@@ -129,14 +92,14 @@ Page({
 			});
 
 		}
-	  });*/
+	  });*!/
 
-  },
+  },*/
 
   login : function (e) {
 	  var that = this;
-      console.log(that.data.userPhone);
-	  console.log(that.data.checkNumber);
+      //console.log(that.data.userPhone);
+	  //console.log(that.data.checkNumber);
 
 	  var ranString=getApi.randomString(12);
       var ranStringCode = getApi.randomString(12);   //申请验证码时候的随机字符串
@@ -205,18 +168,41 @@ Page({
                   method: "POST",
                   success: function(res){
                       console.log(res);
-                      wx.setStorage({
-                      	  key : "userInfo",
-						  data : res
+                      var passengerId = res.data.result.hx_user;
+                      wx.setStorage({     //返回的用户数据保存到本地存储
+                      	key:"user",
+						data:res.data.result
 					  });
-                      wx.getStorage({
-                      	  key : 'userInfo',
-						  success: function(back){
-                      	  	  console.log(back.data)
-						  }
+
+                      if(that.data.userPhone == ''){    //判断号码是否输入
+                          wx.showModal({
+                              title: '请输入手机号！',
+                              confirmText: 'OK',
+                              showCancel: false
+                          })
+                      }else if(that.data.checkNumber == ''){     //判断验证码是否输入
+                          wx.showModal({
+                              title: '请输入密码！',
+                              confirmText: 'OK',
+                              showCancel: false
+                          })
+                      }else{
+
+
+                      	var options = {
+                      		apiUrl: WebIM.config.apiURL,
+							user: passengerId,
+							pwd: '123456',
+							grant_type: that.data.grant_type,
+							appKey: WebIM.config.appKey
+						}
+						console.log('open')
+						WebIM.conn.open(options)
+                      }
+
+					  wx.navigateTo({
+					  	 url: '/pages/home/home'
 					  })
-
-
                   }
 
               });
@@ -226,6 +212,9 @@ Page({
           },
           error: {}
       });
+
+
+
   }
 
 })

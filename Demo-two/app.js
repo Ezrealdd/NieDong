@@ -1,10 +1,148 @@
+require('./utils/strophe')
+var WebIM = require('./utils/WebIM.js').default
 //app.js
 App({
+    getRoomPage: function () {
+        return this.getPage("pages/chatroom/chatroom")
+    },
+    getPage: function (pageName) {
+        var pages = getCurrentPages()
+        return pages.find(function (page) {
+            return page.__route__ == pageName
+        })
+    },
+
 	onLaunch:function(){   //小程序初始化的时候执行一次。以后不主动调用不会再执行。
 		/*var logs = wx.getStorageSync('logs') || []  //获取本地缓存中的logs属性。
 		logs.unshift(Date.now()) //当前登录时间添加到数组中。
 		wx.setStorageSync('logs',logs)  //将数据存入本地缓存。wx是全局对象。
 		*/
+		var that = this;
+		var passengerId = '';
+        wx.getStorage({
+        	key: 'user',
+			success: function(res){
+        		console.log(res.data);
+        		var passengerId = res.data.hx_user
+			}
+		})
+		/*var options = {   //登录环信
+			apiUrl: WebIM.config.apiURL,
+			user: passengerId,
+			pwd: '123456',
+            appKey: WebIM.config.appkey,
+            success: function (token) {
+                var token = token.access_token;
+                //WebIM.utils.setCookie('webim_' + encryptUsername, token, 1);
+            },
+            error: function(){
+            }
+        };
+        WebIM.conn.open(options);*/
+
+        WebIM.conn.listen({
+			onOpened: function(message){
+				console.log("1111111")
+				WebIM.conn.setPresence()
+				//WebIM.conn.getRoster(rosters)
+			},
+			onPresence: function(message){
+				var pages = getCurrentPages()
+				if(message.type == "unsubscribe"){
+					pages[0].moveFriend(message)
+				}
+				if(message.type === "subscribe"){
+					if(message.status === '[resp:true]'){
+						return
+					}else{
+						pages[0].handleFriendMsg(message)
+					}
+				}
+			},
+			onRoster: function(message){
+				var pages = getCurrentPages()
+				if(pages[0]){
+					pages[0].onShow()
+				}
+			},
+            onTextMessage: function (message) {
+                console.log('onTextMessage', message)
+                var page = that.getRoomPage()
+                console.log(page)
+                if (message) {
+                    if (page) {
+                        page.receiveMsg(message, 'txt')
+                    } else {
+                        var chatMsg = that.globalData.chatMsg || []
+                        var value = WebIM.parseEmoji(message.data.replace(/\n/mg, ''))
+                        var time = WebIM.time()
+                        var msgData = {
+                            info: {
+                                from: message.from,
+                                to: message.to
+                            },
+                            username: message.from,
+                            yourname: message.from,
+                            msg: {
+                                type: 'txt',
+                                data: value
+                            },
+                            style: '',
+                            time: time,
+                            mid: 'txt' + message.id
+                        }
+                        chatMsg = wx.getStorageSync(msgData.yourname + message.to) || []
+                        chatMsg.push(msgData)
+                        wx.setStorage({
+                            key: msgData.yourname + message.to,
+                            data: chatMsg,
+                            success: function () {
+                                //console.log('success')
+                            }
+                        })
+                    }
+                }
+            },
+            onError:function (error) {     //各种异常
+                //console.log(error)
+                // 16: server-side close the websocket connection
+                if (error.type == WebIM.statusCode.WEBIM_CONNCTION_DISCONNECTED) {
+                    //console.log('WEBIM_CONNCTION_DISCONNECTED 123', WebIM.conn.autoReconnectNumTotal, WebIM.conn.autoReconnectNumMax);
+                    if (WebIM.conn.autoReconnectNumTotal < WebIM.conn.autoReconnectNumMax) {
+                        return;
+                    }
+                    // wx.('Error', 'server-side close the websocket connection')
+                    // NavigationActions.login()/
+
+                    wx.showToast({
+                        title: 'server-side close the websocket connection',
+                        duration: 1000
+                    });
+                    wx.redirectTo({
+                        url: '/pages/login/login'
+                    });
+                    return;
+                }
+
+                // 8: offline by multi login
+                if (error.type == WebIM.statusCode.WEBIM_CONNCTION_SERVER_ERROR) {
+                    //console.log('WEBIM_CONNCTION_SERVER_ERROR');
+                    // Alert.alert('Error', 'offline by multi login')
+                    // NavigationActions.login()
+
+                    wx.showToast({
+                        title: 'offline by multi login',
+                        duration: 1000
+                    })
+                    wx.redirectTo({
+                        url: '/pages/login/login'
+                    })
+                    return;
+                }
+            }
+
+
+		})
 	},
 	getUserInfo:function(cb){  //获取登录用户信息。其他页面通过getApp().getUserInfo(function(userinfo){console.log(userinfo);})调用这个方法，获取用户信息。cb是一个形参，类型是函数。
 		var that = this
@@ -23,27 +161,9 @@ App({
 			})
 		}
 	},
-	/*getLocationInfo: function(cb){
-		var that = this;
-		if(this.globalData.locationInfo){
-			cb(this.globalData.locationInfo)
-		}else{
-			wx.getLocation({
-				type: 'gcj02',
-				success: function(res){
-					that.globalData.locationInfo = res;
-					cb(that.globalData.locationInfo)
-				},
-				fail: function(){
-					//fail
-				},
-				complete: function(){
 
-				}
-			})
-		}
-	},*/
 	globalData:{
-		userInfo:null
+		userInfo:null,
+		chatMsg: []
 	}
 })

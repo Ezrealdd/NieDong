@@ -1,8 +1,7 @@
 {
 "pages":[
-	"pages/modal/modal",
-	"pages/home/home",
-	"pages/map/map"
+	"pages/login/login",
+	"pages/home/home"
 	],
 "window":{
 	"backgroundTextStyle" : "light",
