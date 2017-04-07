@@ -13,16 +13,12 @@ App({
     },
 
 	onLaunch:function(){   //小程序初始化的时候执行一次。以后不主动调用不会再执行。
-		/*var logs = wx.getStorageSync('logs') || []  //获取本地缓存中的logs属性。
-		logs.unshift(Date.now()) //当前登录时间添加到数组中。
-		wx.setStorageSync('logs',logs)  //将数据存入本地缓存。wx是全局对象。
-		*/
 		var that = this;
 		var passengerId = '';
         wx.getStorage({
         	key: 'user',
 			success: function(res){
-        		console.log(res.data);
+        		//console.log(res.data);
         		var passengerId = res.data.hx_user
 			}
 		})
@@ -30,7 +26,7 @@ App({
 			apiUrl: WebIM.config.apiURL,
 			user: passengerId,
 			pwd: '123456',
-            appKey: WebIM.config.appkey,
+            appKey: '1143170404115272#shayijiao',
             success: function (token) {
                 var token = token.access_token;
                 //WebIM.utils.setCookie('webim_' + encryptUsername, token, 1);
@@ -103,9 +99,7 @@ App({
                     }
                 }
             },
-            onError:function (error) {     //各种异常
-                //console.log(error)
-                // 16: server-side close the websocket connection
+            onError: function (error) {     //各种异常
                 if (error.type == WebIM.statusCode.WEBIM_CONNCTION_DISCONNECTED) {
                     //console.log('WEBIM_CONNCTION_DISCONNECTED 123', WebIM.conn.autoReconnectNumTotal, WebIM.conn.autoReconnectNumMax);
                     if (WebIM.conn.autoReconnectNumTotal < WebIM.conn.autoReconnectNumMax) {
