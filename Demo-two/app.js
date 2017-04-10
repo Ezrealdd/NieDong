@@ -36,7 +36,7 @@ App({
         };
         WebIM.conn.open(options);*/
 
-        WebIM.conn.listen({
+        /*WebIM.conn.listen({
 			onOpened: function(message){
 				console.log("1111111")
 				WebIM.conn.setPresence()
@@ -136,7 +136,7 @@ App({
             }
 
 
-		})
+		})*/
 	},
 	getUserInfo:function(cb){  //获取登录用户信息。其他页面通过getApp().getUserInfo(function(userinfo){console.log(userinfo);})调用这个方法，获取用户信息。cb是一个形参，类型是函数。
 		var that = this

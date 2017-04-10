@@ -1,0 +1,6 @@
+<page>
+    <view class="wait-text">{{title}}</view>
+    <view class="cancel-btn">
+       <button id="cancel" bindtap="makeCancel"><text class="btn-text">取消订单</text></button>
+    </view>
+</page>

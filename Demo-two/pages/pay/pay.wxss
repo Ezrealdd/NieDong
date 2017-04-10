@@ -1,0 +1,17 @@
+.origin,.end,.pay-message{
+  font-family: "Microsoft YaHei";
+}
+.pay-message{
+  margin-top: 45%;
+}
+
+.pay-num ,.pay-text{
+  text-align: center;
+}
+.paynum,.paytext{
+  display: inline-block;
+}
+.paynum{
+  font-size: 70rpx;
+  color: #ffab27;
+}

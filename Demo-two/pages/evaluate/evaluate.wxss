@@ -1,0 +1,67 @@
+/**index.wxss**/
+@import "../common/lib/weui.wxss";
+.home-page{
+  padding: 20%;
+}
+.mapStyle{
+  margin-top: 8%;
+}
+.headImage{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  position: absolute;
+  margin-left: 5%;
+  top: 2%;
+}
+.carNum{
+  display: inline-block;
+  position: relative;
+  margin-left: 20%;
+  margin-top: 5%;
+}
+.star{
+  width: 35rpx;
+  height: 35rpx;
+}
+.star-block{
+  margin-left: 20%;
+}
+page{
+  font-family: "Microsoft YaHei";
+}
+.megBlock{
+  border-bottom: 1rpx solid #000000;
+}
+.classImage{
+  width: 18%;
+  position: absolute;
+  left: 70%;
+  top: 3%;
+}
+.callbtn{
+  width: 18%;
+  position: absolute;
+  left: 70%;
+  top: 3%;
+  background-color: #ffab27;
+  font-size: 30rpx;
+}
+.star-image{
+  width: 60rpx;
+  height: 60rpx;
+}
+.score{
+  text-align: center;
+  margin-top: 30%;
+}
+.comment{
+  border: 1rpx solid #000;
+  width: 85%;
+  margin-left: 7%;
+  margin-top: 5%;
+}
+.submit-btn{
+  background-color: #ffab27;
+  border-radius: 0px;
+}

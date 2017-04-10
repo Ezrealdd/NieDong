@@ -123,3 +123,6 @@ button[type="primary"]{
     color: #fff;
 
 }
+page{
+    font-family: "Microsoft YaHei";
+}

@@ -32,7 +32,7 @@ Page({
   },
 
 
-/*  formSubmit: function(e){
+  getCheckNum : function(e){    //点击获得验证码
   	var that = this
 	console.log(that.data.userPhone);
 	var testCode =  getApi.getToken(that.data.userPhone);
@@ -42,7 +42,7 @@ Page({
   	//console.log(timestamp)
 	//console.log(getApi.randomString(12))
 	//var tokenTest = getApi.createSign()
-	  /!*wx.login({
+	  /*wx.login({
 	  	success: function(e){
 	  		console.log(e);
 
@@ -74,9 +74,9 @@ Page({
 			});
 
 		}
-	  });*!/
+	  });*/
 
-  },*/
+  },
 
   login : function (e) {
 	  var that = this;
@@ -124,10 +124,12 @@ Page({
                   var tokenArr = [res.data.result.access_token,res.data.result.secret_token];   //获取token，下面用到请求登录信息
                   //console.log(tokenArr);
 
+                  wx.setStorage({      //token存储到本地，以后的接口继续使用
+                      key:"token",
+                      data:tokenArr
+                  })
                   var phoneObj = {"code":that.data.checkNumber,"phone":that.data.userPhone};         //post_body里面参数
                   var phoneCode = JSON.stringify(phoneObj);                //post_body转换成json字符串
-                  //function checkNumber(){
-                  //console.log(phoneCode);
 
                   function createSignCode(){
                       var params =[];   //签名字符串数组
@@ -166,30 +168,47 @@ Page({
                       success: function(res){
                           console.log(res);
                           var passengerId = res.data.result.hx_user;
+                          console.log(passengerId)
                           wx.setStorage({     //返回的用户数据保存到本地存储
-                              key:"user",
+                              key:"userInfo",
                               data:res.data.result
                           });
 
-                          var options = {
+                          /*var options = {   //注册环信
+                              username: passengerId,
+                              password: '123456',
+                              nickname: 'nickname',
+                              appKey: 'txzkj#shayijiao',
+                              success: function () {
+
+                              },
+                              error: function(){
+
+                              },
+                              apiUrl:WebIM.config.apiURL
+                          };
+                          WebIM.utils.registerUser(options);*/
+
+                          var options = {    //登录环信
                               apiUrl: WebIM.config.apiURL,
                               user: passengerId,
                               pwd: '123456',
-                              grant_type: that.data.grant_type,
-                              appKey: 'miaoshare#shayijiao'
+                              //grant_type: 'password',
+                              appKey: 'txzkj#shayijiao'
                           }
                           console.log('open')
                           WebIM.conn.open(options)
 
 						  WebIM.conn.listen({      //连接成功回调函数
-						  	   onOpened: function(message){
+						  	   onOpened: function(message){    //打开环信连接
 						  	   	  console.log(message)
-                                  wx.setStorage({    //存储环信返回的access_token
+                                   wx.setStorage({    //存储环信返回的access_token
                                       key:"hxUserToken",
                                       data:message.accessToken
                                   })
 							   },
-                              onTextMessage: function (message){
+
+                               onTextMessage: function (message){     //接收文本消息
                                   console.log('onTextMessage', message)
 							  }
 						  })

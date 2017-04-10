@@ -1,7 +1,12 @@
 {
 "pages":[
-	"pages/login/login",
-	"pages/home/home"
+	"pages/evaluate/evaluate",
+	"pages/map/map",
+	"pages/pay/pay",
+	"pages/haveOrder/haveOrder",
+	"pages/home/home",
+	"pages/wait/wait",
+	"pages/login/login"
 	],
 "window":{
 	"backgroundTextStyle" : "light",

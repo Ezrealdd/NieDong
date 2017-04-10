@@ -10,7 +10,8 @@ Page({
 		location: {
             longitude: '',
             latitude: '',
-            name: '请选择上车位置'
+            name: '请选择上车位置',
+			address: ''
 		},
 		destination: {
 			longitude: '',
@@ -108,12 +109,20 @@ Page({
 	makeCall : function (e) {
          var that = this;
          wx.getStorage({
-         	key : "username",
+         	key : "user",
 			success : function(res) {
 					console.log(res.data);
 		      }
 		 });
+        wx.redirectTo({
+            url: '/pages/wait/wait'
+        })
 
+    },
+	makePhoneCall: function (e) {
+        wx.makePhoneCall({
+            phoneNumber: '10086'
+        })
     }
 
 

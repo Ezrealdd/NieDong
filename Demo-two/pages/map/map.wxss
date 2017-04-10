@@ -1,0 +1,39 @@
+/**index.wxss**/
+@import "../common/lib/weui.wxss";
+.home-page{
+    padding: 20%;
+}
+.mapStyle{
+    margin-top: 8%;
+}
+.headImage{
+    width: 100rpx;
+    height: 100rpx;
+    border-radius: 50%;
+    position: absolute;
+    margin-left: 5%;
+    top: 3%;
+}
+.carNum{
+    display: inline-block;
+    position: relative;
+    margin-left: 20%;
+    margin-top: 5%;
+}
+.star{
+    width: 35rpx;
+    height: 35rpx;
+}
+.star-block{
+    margin-left: 20%;
+}
+.phone{
+    width: 70rpx;
+    height: 70rpx;
+    position: absolute;
+    left: 80%;
+    top: 5%;
+}
+page{
+    font-family: "Microsoft YaHei";
+}

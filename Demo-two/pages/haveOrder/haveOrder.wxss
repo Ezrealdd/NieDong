@@ -1,0 +1,6 @@
+.order-text{
+  font-family: "Microsoft YaHei";
+  text-align: center;
+  line-height: 1000rpx;
+  color: #666666;
+}

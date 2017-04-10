@@ -1,0 +1,19 @@
+<!--支付信息-->
+<page>
+    <view class="position">
+        <view class="origin">
+           起点： {{origin}}
+        </view>
+        <view class="end">
+            终点： {{end}}
+        </view>
+    </view>
+    <view class="pay-message">
+        <view class="pay-num">
+            <text class="paynum">${{payNum}}</text>
+        </view>
+        <view class="pay-text">
+            <text class="paytext">总金额</text>
+        </view>
+    </view>
+</page>

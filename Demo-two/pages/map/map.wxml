@@ -1,0 +1,25 @@
+<!--等待司机页面-->
+<page>
+<view class="megBlock">
+    <view class="head">
+        <image class="headImage" src="../../images/example.png"></image>
+    </view>
+    <view class="carNum">
+        <text>渝B92T85</text>
+    </view>
+    <view class="star-block">
+        <block wx:for="{{stars}}" wx:for-item="item" class="star-block">
+                <image src="../../images/{{item}}-star.png" class="star"></image>
+            </block>
+    </view>
+    <view class="callImage">
+        <image src="../../images/phone.png" class="phone" bindtap="makeCall"></image>
+    </view>
+</view>
+
+<view class="mapStyle">
+    <map id="map" longitude="{{longitude}}" latitude="{{latitude}}" scale="16" controls="{{controls}}" bindcontroltap="controltap" markers="{{markers}}" bindmarkertap="markertap" polyline="{{polyline}}" bindregionchange="regionchange" show-location style="width: 100%;height: 1000rpx"></map>
+</view>
+
+</page>
+

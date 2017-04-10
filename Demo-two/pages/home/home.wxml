@@ -37,7 +37,7 @@
     </view>
 
     <view class="home-footer">
-        <text class="user-number">客服电话400-000-6777</text>
+        <text class="user-number" bindtap="makePhoneCall">客服电话</text>
     </view>
 </view>
 </page>

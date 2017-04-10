@@ -1,0 +1,4 @@
+<!--用司机接单过度页面-->
+<page>
+    <view class="order-text">{{title}}</view>
+</page>

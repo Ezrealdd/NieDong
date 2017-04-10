@@ -1,0 +1,34 @@
+<!--评价页面-->
+<page>
+<view class="megBlock">
+     <view class="head">
+         <image class="headImage" src="../../images/example.png"></image>
+     </view>
+     <view class="carNum">
+         <text>渝B92T85</text>
+     </view>
+     <view class="star-block">
+         <block wx:for="{{headStars}}" wx:for-item="item" class="star-block">
+                 <image src="../../images/{{item}}-star.png" class="star"></image>
+             </block>
+     </view>
+     <view class="callImage">
+        <button class="callbtn" bindtap="makeCall">投诉</button>
+     </view>
+</view>
+<view class="score">
+    <block wx:for="{{stars}}" wx:for-item="item" class="score-star">
+        <image class="star-image" src="{{key > item?selectedSrc : normalSrc}}">
+           <view class="item" bindtap="select" data-key="{{item+1}}"></view>
+        </image>
+    </block>
+</view>
+
+<view class="comment">
+    <form bindsubmit="bindFormSubmit">
+        <textarea class="textarea-body" name="textarea" placeholder="老子不爽" />
+        <button form-type="submit" class="submit-btn">提交</button>
+    </form>
+</view>
+
+</page>

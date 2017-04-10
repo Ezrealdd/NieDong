@@ -1,0 +1,15 @@
+.wait-text{
+  font-family: "Microsoft YaHei";
+  text-align: center;
+  line-height: 1000rpx;
+  color: #666666;
+}
+.btn-text{
+  font-family: "Microsoft YaHei";
+}
+#cancel{
+  border-radius: 10rpx;
+  background: #ffab27;
+  color: #000;
+  width: 65%
+}
