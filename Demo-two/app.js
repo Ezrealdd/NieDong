@@ -2,7 +2,7 @@ require('./utils/strophe')
 var WebIM = require('./utils/WebIM.js').default
 //app.js
 App({
-    getRoomPage: function () {
+  /*  getRoomPage: function () {
         return this.getPage("pages/chatroom/chatroom")
     },
     getPage: function (pageName) {
@@ -10,7 +10,7 @@ App({
         return pages.find(function (page) {
             return page.__route__ == pageName
         })
-    },
+    },*/
 
 	onLaunch:function(){   //小程序初始化的时候执行一次。以后不主动调用不会再执行。
 		var that = this;
@@ -36,30 +36,10 @@ App({
         };
         WebIM.conn.open(options);*/
 
-        /*WebIM.conn.listen({
+        WebIM.conn.listen({
 			onOpened: function(message){
-				console.log("1111111")
 				WebIM.conn.setPresence()
 				//WebIM.conn.getRoster(rosters)
-			},
-			onPresence: function(message){
-				var pages = getCurrentPages()
-				if(message.type == "unsubscribe"){
-					pages[0].moveFriend(message)
-				}
-				if(message.type === "subscribe"){
-					if(message.status === '[resp:true]'){
-						return
-					}else{
-						pages[0].handleFriendMsg(message)
-					}
-				}
-			},
-			onRoster: function(message){
-				var pages = getCurrentPages()
-				if(pages[0]){
-					pages[0].onShow()
-				}
 			},
             onTextMessage: function (message) {
                 console.log('onTextMessage', message)
@@ -99,7 +79,7 @@ App({
                     }
                 }
             },
-            onError: function (error) {     //各种异常
+            /*onError: function (error) {     //各种异常
                 if (error.type == WebIM.statusCode.WEBIM_CONNCTION_DISCONNECTED) {
                     //console.log('WEBIM_CONNCTION_DISCONNECTED 123', WebIM.conn.autoReconnectNumTotal, WebIM.conn.autoReconnectNumMax);
                     if (WebIM.conn.autoReconnectNumTotal < WebIM.conn.autoReconnectNumMax) {
@@ -133,10 +113,10 @@ App({
                     })
                     return;
                 }
-            }
+            }*/
 
 
-		})*/
+		})
 	},
 	getUserInfo:function(cb){  //获取登录用户信息。其他页面通过getApp().getUserInfo(function(userinfo){console.log(userinfo);})调用这个方法，获取用户信息。cb是一个形参，类型是函数。
 		var that = this

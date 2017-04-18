@@ -1,0 +1,36 @@
+<!--服务评价页面-->
+<page>
+<view class="license">
+    <form class="message">
+        <view class="driveMeg">
+            <input class="carInput" placeholder="请输入车牌号"></input>
+        </view>
+        <view class="driveTime">
+            <view class="section-title">日期选择:</view>
+            <picker calss="time-picker" mode="date" value="{{date}}" start="2015-09-01" bindchange="bindDataChange">
+                <view class="time-picker-date">{{date}}     /</view>
+            </picker>
+            <picker mode="time" value="{{time}}" start="09:91" end="21:01" bindchange="bindTimeChange">
+                <view class="time-picker-time">{{time}}</view>
+            </picker>
+        </view>
+    </form>
+
+    <view class="star">
+        <block class="starBlock" wx:for="{{stars}}">
+            <image class="star-image" style="left:{{item*100}}rpx" src="{{key>item?(key-item == 0.5?halfSrc:selectedSrc):normalSrc}}">
+              <view class="item" style="left:0rpx" data-key="{{item+0.5}}" bindtap="selectLeft"></view>
+              <view class="item" style="left:50rpx" data-key="{{item+1}}" bindtap="selectRight"></view>
+            </image>
+        </block>
+    </view>
+
+    <view class="comment">
+        <form bindsubmit="bindFormSubmit">
+            <textarea class="textarea-body" name="textarea" placeholder="老子不爽" />
+            <button form-type="submit" class="submit-btn">提交</button>
+        </form>
+    </view>
+
+</view>
+</page>

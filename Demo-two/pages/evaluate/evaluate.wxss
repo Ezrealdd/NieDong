@@ -65,3 +65,7 @@ page{
   background-color: #ffab27;
   border-radius: 0px;
 }
+.item{
+  width: 30rpx;
+  height: 60rpx;
+}

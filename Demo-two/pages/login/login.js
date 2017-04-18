@@ -14,10 +14,13 @@ Page({
 	  chosen: '',*/
 	  userPhone: '',
 	  checkNumber: '',
-      grant_type: 'password'
+      grant_type: 'password',
+      tokenUrl:  'https://syjpp.txzkeji.com/passenger/token',
+      apiUrl:  'https://syjpp.txzkeji.com/passenger/api'
   },
   onLoad: function () {
 	  //this.login()
+
   },
   userPhoneInput: function(e){
   	this.setData({
@@ -102,7 +105,7 @@ Page({
       }else{
 
           wx.request({
-              url: "https://syjp.txzkeji.com/passenger/token",
+              url: that.data.tokenUrl,
               data:{
                   secret_token: "test.secret",
                   access_token: "test",
@@ -148,7 +151,7 @@ Page({
                   }
 
                   wx.request({     //通过token去获取登录信息
-                      url: "https://syjp.txzkeji.com/passenger/api",
+                      url: that.data.apiUrl,
                       data: {
                           access_token : tokenArr[0],
                           format : 'JSON',
@@ -171,7 +174,7 @@ Page({
                           console.log(passengerId)
                           wx.setStorage({     //返回的用户数据保存到本地存储
                               key:"userInfo",
-                              data:res.data.result
+                              data:res.data.result.user_token
                           });
 
                           /*var options = {   //注册环信
@@ -208,9 +211,9 @@ Page({
                                   })
 							   },
 
-                               onTextMessage: function (message){     //接收文本消息
+                               /*onTextMessage: function (message){     //接收文本消息
                                   console.log('onTextMessage', message)
-							  }
+							  }*/
 						  })
 
 						  if(res.data.result.success == 1){

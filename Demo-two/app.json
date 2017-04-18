@@ -1,12 +1,13 @@
 {
 "pages":[
-	"pages/evaluate/evaluate",
-	"pages/map/map",
-	"pages/pay/pay",
-	"pages/haveOrder/haveOrder",
+	"pages/login/login",
 	"pages/home/home",
 	"pages/wait/wait",
-	"pages/login/login"
+	"pages/evaluate/evaluate",
+	"pages/complaint/complaint",
+	"pages/map/map",
+	"pages/pay/pay",
+	"pages/haveOrder/haveOrder"
 	],
 "window":{
 	"backgroundTextStyle" : "light",

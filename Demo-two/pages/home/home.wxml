@@ -31,7 +31,7 @@
             </view>
 
             <view class="btn-area">
-                <button id="makeCall" type="primary" formType="submit" bindtap="makeCall">招  车</button>
+                <button id="makeCall" type="primary" formType="submit" bindtap="callTheCar">招  车</button>
             </view>
         </form>
     </view>

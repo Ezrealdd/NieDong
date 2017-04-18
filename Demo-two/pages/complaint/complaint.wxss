@@ -1,0 +1,57 @@
+page{
+  font-family: "Microsoft YaHei";
+}
+.carInput{
+  border: 1rpx solid #000;
+  width: 60%;
+  margin-left: 20%;
+  margin-top: 20%;
+}
+.timeInput{
+  border: 1rpx solid #000;
+  width: 60%;
+  margin-left: 20%;
+  margin-top: 5%;
+}
+.star-image{
+  width: 90rpx;
+  height: 90rpx;
+}
+.star{
+  text-align: center;
+  margin-top: 5%;
+}
+.starBlock{
+  display: inline-block;
+}
+.comment{
+  border: 1rpx solid #000;
+  width: 85%;
+  margin-left: 7%;
+  margin-top: 5%;
+}
+.submit-btn{
+  background-color: #ffab27;
+  border-radius: 0px;
+}
+.date-input{
+  border: 1rpx solid #000;
+}
+.section-title{
+  display: inline-block;
+  margin-left: 19%;
+  margin-top: 5%;
+}
+.time-picker,.time-picker-date.time-picker-time{
+  display: inline-block;
+}
+.time-picker-date{
+  position: absolute;
+  left: 40%;
+  top: 230rpx;
+}
+.time-picker-time{
+  position: absolute;
+  left: 67%;
+  top: 230rpx;
+}

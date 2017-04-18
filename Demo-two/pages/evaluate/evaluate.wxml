@@ -17,10 +17,11 @@
      </view>
 </view>
 <view class="score">
-    <block wx:for="{{stars}}" wx:for-item="item" class="score-star">
-        <image class="star-image" src="{{key > item?selectedSrc : normalSrc}}">
-           <view class="item" bindtap="select" data-key="{{item+1}}"></view>
-        </image>
+    <block wx:for="{{stars}}">
+          <image class="star-image" bindtap="clickstar" style="left: {{item*60}}rpx" src="{{key > item ?(key-item == 0.5?halfSrc:selectedSrc) : normalSrc}}">
+            <view class="item" style="left:0rpx" data-key="{{item+0.5}}" bindtap="selectLeft"></view>
+            <view class="item" style="left:30rpx" data-key="{{item+1}}" bindtap="selectRight"></view>
+          </image>
     </block>
 </view>
 
