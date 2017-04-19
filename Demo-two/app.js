@@ -14,72 +14,65 @@ App({
 
 	onLaunch:function(){   //小程序初始化的时候执行一次。以后不主动调用不会再执行。
 		var that = this;
-		var passengerId = '';
-        wx.getStorage({
-        	key: 'user',
-			success: function(res){
-        		//console.log(res.data);
-        		var passengerId = res.data.hx_user
-			}
-		})
-		/*var options = {   //登录环信
-			apiUrl: WebIM.config.apiURL,
-			user: passengerId,
-			pwd: '123456',
-            appKey: '1143170404115272#shayijiao',
-            success: function (token) {
-                var token = token.access_token;
-                //WebIM.utils.setCookie('webim_' + encryptUsername, token, 1);
-            },
-            error: function(){
-            }
-        };
-        WebIM.conn.open(options);*/
+		/*var passengerId=wx.getStorageSync('userId');
+        var options = {    //登录环信
+            apiUrl: WebIM.config.apiURL,
+            user: passengerId,
+            pwd: '123456',
+            //grant_type: 'password',
+            appKey: 'txzkj#shayijiao'
+        }
 
-        WebIM.conn.listen({
+        WebIM.conn.open(options)*/
+		WebIM.conn.listen({
+
+			onOpened: function(message){    //打开环信连接
+                console.log(message)
+                wx.setStorage({    //存储环信返回的access_token
+                    key:"hxUserToken",
+                    data:message.accessToken
+                })
+            },
+            onTextMessage: function (message){     //接收文本消息
+                console.log('onTextMessage', message)
+                var backMessage= message.data
+                console.log(backMessage)
+
+            },
+			onError: function (error) {
+				if(error.type == WebIM.statusCode.WEBIM_CONNCTION_DISCONNECTED){
+					if(WebIM.conn.autoReconnectNumTotal<WebIM.conn.autoReconnectNumMax){
+						return;
+					}
+					wx.redirectTo({
+						url: '/pages/login/login'
+					});
+					return;
+				}
+
+				if(error.type == WebIM.statusCode.WEBIM_CONNCTION_SERVER_ERROR){
+					wx.redirectTo({
+						url: '/pages/login/login'
+					})
+					return;
+				}
+
+            }
+		})
+
+
+
+        /*WebIM.conn.listen({
 			onOpened: function(message){
 				WebIM.conn.setPresence()
 				//WebIM.conn.getRoster(rosters)
 			},
             onTextMessage: function (message) {
                 console.log('onTextMessage', message)
-                var page = that.getRoomPage()
-                console.log(page)
-                if (message) {
-                    if (page) {
-                        page.receiveMsg(message, 'txt')
-                    } else {
-                        var chatMsg = that.globalData.chatMsg || []
-                        var value = WebIM.parseEmoji(message.data.replace(/\n/mg, ''))
-                        var time = WebIM.time()
-                        var msgData = {
-                            info: {
-                                from: message.from,
-                                to: message.to
-                            },
-                            username: message.from,
-                            yourname: message.from,
-                            msg: {
-                                type: 'txt',
-                                data: value
-                            },
-                            style: '',
-                            time: time,
-                            mid: 'txt' + message.id
-                        }
-                        chatMsg = wx.getStorageSync(msgData.yourname + message.to) || []
-                        chatMsg.push(msgData)
-                        wx.setStorage({
-                            key: msgData.yourname + message.to,
-                            data: chatMsg,
-                            success: function () {
-                                //console.log('success')
-                            }
-                        })
-                    }
-                }
+
+
             },
-            /*onError: function (error) {     //各种异常
+            /!*onError: function (error) {     //各种异常
                 if (error.type == WebIM.statusCode.WEBIM_CONNCTION_DISCONNECTED) {
                     //console.log('WEBIM_CONNCTION_DISCONNECTED 123', WebIM.conn.autoReconnectNumTotal, WebIM.conn.autoReconnectNumMax);
                     if (WebIM.conn.autoReconnectNumTotal < WebIM.conn.autoReconnectNumMax) {
@@ -113,10 +106,10 @@ App({
                     })
                     return;
                 }
-            }*/
+            }*!/
 
 
-		})
+		})*/
 	},
 	getUserInfo:function(cb){  //获取登录用户信息。其他页面通过getApp().getUserInfo(function(userinfo){console.log(userinfo);})调用这个方法，获取用户信息。cb是一个形参，类型是函数。
 		var that = this
@@ -138,6 +131,6 @@ App({
 
 	globalData:{
 		userInfo:null,
-		chatMsg: []
+		backMessage: ''
 	}
 })

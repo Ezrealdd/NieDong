@@ -176,6 +176,10 @@ Page({
                               key:"userInfo",
                               data:res.data.result.user_token
                           });
+                          wx.setStorage({
+                              key:"userId",
+                              data:res.data.result.hx_user
+                          });
 
                           /*var options = {   //注册环信
                               username: passengerId,
@@ -211,9 +215,6 @@ Page({
                                   })
 							   },
 
-                               /*onTextMessage: function (message){     //接收文本消息
-                                  console.log('onTextMessage', message)
-							  }*/
 						  })
 
 						  if(res.data.result.success == 1){

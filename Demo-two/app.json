@@ -2,6 +2,7 @@
 "pages":[
 	"pages/login/login",
 	"pages/home/home",
+	"pages/trip/trip",
 	"pages/wait/wait",
 	"pages/evaluate/evaluate",
 	"pages/complaint/complaint",

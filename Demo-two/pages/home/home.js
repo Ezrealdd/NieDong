@@ -127,7 +127,6 @@ Page({
          	var value=wx.getStorageSync('token')
 			 if(value){
          		tokenArr = value;
-         		console.log(value)
 			 }
 		 }catch(e){
          	console.log('失败')
@@ -145,25 +144,38 @@ Page({
                  url: '/pages/login/login'
              })
 		 }
-		 console.log(userToken);
+		 //console.log(userToken);
+
+		 var hxUserToken ='';
+		 try{
+		 	var value=wx.getStorageSync('hxUserToken')
+			 if(value){
+		 		hxUserToken=value;
+			 }
+		 }catch(e){
+		 	console.log('hxUserToken获取失败')
+             wx.redirectTo({
+                 url: '/pages/login/login'
+             })
+		 }
 
         var ranString=getApi.randomString(12);
         var ranStringCode = getApi.randomString(12);   //申请验证码时候的随机字符串
         var timestampToken = new Date().getTime();   //生成时间戳
 
-		console.log(that.data.location.longitude)   //起点
+		console.log(that.data.location.address)   //起点
 		var orderObj={
 			'is_appointment':'0',
 			'is_carpool':'0',
-			'start_addr':'渝中区两路口街道重庆国泰出租汽车有限公司国盛·宏岭高地',
-			'end_addr':'渝中区HOLA特力和乐(龙湖时代店)',
-			'route_planning':['鹅岭正街','长江二路'],
-			'longitude':'106.536878',
-			'latitude':'29.548507',
+			'start_addr':that.data.location.address,
+			'end_addr':that.data.destination.address,
+			'route_planning':[that.data.location.address,that.data.destination.address],
+			'longitude':that.data.location.longitude,
+			'latitude':that.data.location.latitude,
 			'preprice':'10',
-			'start_point':[106.536878,29.548507],
-			'end_point':[106.515099,29.533522],
-			'plan_point':['106.536878,29.548507','106.515099,29.533522']
+			'start_point':[that.data.location.longitude,that.data.location.latitude],
+			'end_point':[that.data.destination.longitude,that.data.destination.latitude],
+			'plan_point':[that.data.location.longitude,that.data.location.latitude,that.data.destination.longitude,that.data.destination.latitude]
 		};
 		var orderCode= JSON.stringify(orderObj);
 		function createSignCode() {    //获取接口的sign
@@ -181,44 +193,60 @@ Page({
             var signCode = params.join('&');
             return mdCopy.md5(signCode);
         }
-		wx.request({
-            url: that.data.apiUrl,
-            data: {
-                access_token : tokenArr[0],
-                format : 'JSON',
-                method : 'user.order.create',
-                once : ranStringCode,
-                post_body :orderCode,
-                secret_token : tokenArr[1],
-                timestamp : timestampToken,
-                user_token : userToken,
-                version : '0.1',
-                sign : createSignCode()
-            },
-            header:{
-                "content-type": "application/x-www-form-urlencoded"
-            },
-            method: "POST",
-			success:function (res) {
-				console.log(res)
-				//var isCall=res.data.result.success;
-				if(res.data.result.success==1){
-					wx.redirectTo({
-						url: '/pages/wait/wait'
-					})
-					wx.setStorage({
-						key:'order_num',
-						data:res.data.result.order_num
-					})
-				}else{
-					wx.showModal({
-						title:'叫车失败，请重试！',
-						confirmText:'OK',
-						showCancel:false
-					})
-				}
-            }
-		})
+
+        console.log(hxUserToken)
+        if(userToken || hxUserToken){     //判断token是否存在
+            /*var options={
+            	apiUrl: WebIM.config.apiURL,
+				accessToken: hxUserToken,
+				appkey: 'txzkj#shayijiao'
+			}
+			WebIM.conn.open(options);*/
+
+			wx.request({
+                url: that.data.apiUrl,
+                data: {
+                    access_token : tokenArr[0],
+                    format : 'JSON',
+                    method : 'user.order.create',
+                    once : ranStringCode,
+                    post_body :orderCode,
+                    secret_token : tokenArr[1],
+                    timestamp : timestampToken,
+                    user_token : userToken,
+                    version : '0.1',
+                    sign : createSignCode()
+                },
+                header:{
+                    "content-type": "application/x-www-form-urlencoded"
+                },
+                method: "POST",
+                success:function (res) {
+                    console.log(res)
+                    //var isCall=res.data.result.success;
+                    if(res.data.result.success==1){
+                        wx.redirectTo({
+                            url: '/pages/wait/wait'
+                        })
+                        wx.setStorage({
+                            key:'order_num',
+                            data:res.data.result.order_num
+                        })
+                    }else{
+                        wx.showModal({
+                            title:'叫车失败，请重试！',
+                            confirmText:'OK',
+                            showCancel:false
+                        })
+                    }
+                }
+            })
+		}else{
+            wx.redirectTo({
+                url: '/pages/login/login'
+            })
+		}
+
 
 
     },

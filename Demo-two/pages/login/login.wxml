@@ -7,12 +7,12 @@
 		<view class="login-body">
 			<form class="login-form" catchsubmit="" catchreset="formReset">
 				<label class="label-phone"  for="phone-number">
-				    <input id="phone" name="phone" type="number" bindinput="userPhoneInput" placeholder="请输入电话号码" value="" />
+				    <input id="phone" name="phone" type="number" bindinput="userPhoneInput" placeholder="请输入电话号码" value="14787807674" />
 				</label>
 
 				<label class="label-check-number" for="check-number">
 					<view class="check-number">
-						<input id="check-number" name="check-number" type="number" bindinput="checkNumInput" placeholder="请输入验证码" /><span><button id="check-number-btn" type="" plain="true" bindtap="getCheckNum" form-type="submit">获取验证码</button></span>
+						<input id="check-number" name="check-number" type="number" bindinput="checkNumInput" placeholder="请输入验证码" value="9501"/><span><button id="check-number-btn" type="" plain="true" bindtap="getCheckNum" form-type="submit">获取验证码</button></span>
 					</view>
 				</label>
 			    <view class="login-btn">

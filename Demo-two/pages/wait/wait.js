@@ -14,6 +14,9 @@ Page({
         apiUrl: 'https://syjpp.txzkeji.com/passenger/api'
     },
     onLoad: function () {
+        /*app.globalData.testmsg = "瞎测试"
+        console.log(app.globalData)*/
+
         WebIM.conn.listen({      //连接成功回调函数
             onOpened: function(message){    //打开环信连接
                 console.log(message)
@@ -24,13 +27,14 @@ Page({
             },
             onTextMessage: function (message){     //接收文本消息
                 console.log('onTextMessage', message)
-                /*if(message.data.type==6){     //环信返回值中type
-                    console.log(message.data.receiver)
-                    var backReceiver = message.data.receiver
-                }*/
-                wx.redirectTo({
-                    url: '/pages/haveOrder/haveOrder?money=22'
-                })
+                var backMessage= message.data
+                console.log(backMessage)
+                if(backMessage){   //如果接到消息就跳转已有司机接单
+                    wx.redirectTo({
+                        url: '/pages/haveOrder/haveOrder'
+                    })
+                }
+
             }
         })
 
