@@ -16,27 +16,24 @@ Page({
     onLoad: function () {
         /*app.globalData.testmsg = "瞎测试"
         console.log(app.globalData)*/
+        console.log(app.globalData.backMessageType)
 
-        WebIM.conn.listen({      //连接成功回调函数
-            onOpened: function(message){    //打开环信连接
-                console.log(message)
-                wx.setStorage({    //存储环信返回的access_token
-                    key:"hxUserToken",
-                    data:message.accessToken
+        /*function nextPage() {
+            if(app.globalData.backMessageType==11){
+                wx.redirectTo({
+                    url: '/pages/haveOrder/haveOrder'
                 })
-            },
-            onTextMessage: function (message){     //接收文本消息
-                console.log('onTextMessage', message)
-                var backMessage= message.data
-                console.log(backMessage)
-                if(backMessage){   //如果接到消息就跳转已有司机接单
-                    wx.redirectTo({
-                        url: '/pages/haveOrder/haveOrder'
-                    })
-                }
-
             }
-        })
+        }*/
+        var setTimeoutId = setTimeout(function nextPage() {
+            if(app.globalData.backMessageType==11){
+                console.log("司机接单")
+                wx.redirectTo({
+                    url: '/pages/haveOrder/haveOrder'
+                })
+            }
+        },10000);
+
 
     },
     makeCancel: function (e) {

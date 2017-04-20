@@ -784,7 +784,7 @@ connection.prototype.open = function (options) {
                 });
                 setTimeout(function () {
                     wx.redirectTo({
-                        url: '../main/main?myName=' + userId
+                        url: '/pages/home/home'
                     })
                 }, 1000);
             }

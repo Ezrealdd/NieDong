@@ -1,5 +1,8 @@
 require('./utils/strophe')
 var WebIM = require('./utils/WebIM.js').default
+var strophe = require('utils/strophe.js')
+var WebIM = require('utils/WebIM.js')
+var WebIM = WebIM.default
 //app.js
 App({
   /*  getRoomPage: function () {
@@ -11,10 +14,14 @@ App({
             return page.__route__ == pageName
         })
     },*/
-
+    globalData:{
+        userInfo:null,
+        backMessageType: '',
+		driverInfo: '',
+    },
 	onLaunch:function(){   //小程序初始化的时候执行一次。以后不主动调用不会再执行。
 		var that = this;
-		/*var passengerId=wx.getStorageSync('userId');
+		var passengerId=wx.getStorageSync('userId');
         var options = {    //登录环信
             apiUrl: WebIM.config.apiURL,
             user: passengerId,
@@ -23,7 +30,7 @@ App({
             appKey: 'txzkj#shayijiao'
         }
 
-        WebIM.conn.open(options)*/
+        WebIM.conn.open(options)
 		WebIM.conn.listen({
 
 			onOpened: function(message){    //打开环信连接
@@ -35,9 +42,14 @@ App({
             },
             onTextMessage: function (message){     //接收文本消息
                 console.log('onTextMessage', message)
-                var backMessage= message.data
-                console.log(backMessage)
+				var backMessage= JSON.parse(message.data)
+					if(backMessage.type == 11){     //司机已接单
+                        console.log("司机接单")
+                        that.globalData.backMessageType = backMessage.type
+						that.globalData.driverInfo = backMessage
+					}else if(backMessage.type == 8){    //司机实时位置
 
+					}
             },
 			onError: function (error) {
 				if(error.type == WebIM.statusCode.WEBIM_CONNCTION_DISCONNECTED){
@@ -129,8 +141,4 @@ App({
 		}
 	},
 
-	globalData:{
-		userInfo:null,
-		backMessage: ''
-	}
 })

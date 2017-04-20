@@ -195,13 +195,63 @@ Page({
         }
 
         console.log(hxUserToken)
-        if(userToken || hxUserToken){     //判断token是否存在
-            /*var options={
+		if(userToken==null){
+			wx.redirectTo({
+				url: '/pages/login/login'
+			})
+		}else if(hxUserToken==null){
+            wx.redirectTo({
+                url: '/pages/login/login'
+            })
+		}else{
+            wx.request({
+                url: that.data.apiUrl,
+                data: {
+                    access_token : tokenArr[0],
+                    format : 'JSON',
+                    method : 'user.order.create',
+                    once : ranStringCode,
+                    post_body :orderCode,
+                    secret_token : tokenArr[1],
+                    timestamp : timestampToken,
+                    user_token : userToken,
+                    version : '0.1',
+                    sign : createSignCode()
+                },
+                header:{
+                    "content-type": "application/x-www-form-urlencoded"
+                },
+                method: "POST",
+                success:function (res) {
+                    console.log(res)
+                    //var isCall=res.data.result.success;
+                    if(res.data.result.success==1){
+                        wx.redirectTo({
+                            url: '/pages/wait/wait'
+                        })
+                        wx.setStorage({
+                            key:'order_num',
+                            data:res.data.result.order_num
+                        })
+                    }else{
+                        wx.showModal({
+                            title:'叫车失败，请重试！',
+                            confirmText:'OK',
+                            showCancel:false
+                        })
+                    }
+                }
+            })
+		}
+
+
+        /*if(userToken || hxUserToken){     //判断token是否存在
+            /!*var options={
             	apiUrl: WebIM.config.apiURL,
 				accessToken: hxUserToken,
 				appkey: 'txzkj#shayijiao'
 			}
-			WebIM.conn.open(options);*/
+			WebIM.conn.open(options);*!/
 
 			wx.request({
                 url: that.data.apiUrl,
@@ -245,7 +295,7 @@ Page({
             wx.redirectTo({
                 url: '/pages/login/login'
             })
-		}
+		}*/
 
 
 
