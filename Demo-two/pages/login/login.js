@@ -180,6 +180,10 @@ Page({
                               key:"userId",
                               data:res.data.result.hx_user
                           });
+                          wx.setStorage({
+                              key:"userPhone",
+                              data:res.data.result.passenger_phone
+                          })
 
                           /*var options = {   //注册环信
                               username: passengerId,
@@ -222,7 +226,7 @@ Page({
                                   url: '/pages/home/home'
                               })
 						  }else if(res.data.result.success == 101){
-                              console.log('111');
+                              console.log(res);
 						      wx.showModal({
                                   title: '短信验证码错误！',
                                   confirmText: 'OK',

@@ -1,0 +1,5 @@
+<page>
+<view class="logout">
+    <button id="logout" type="primary" bindtap="logout">退  出</button>
+</view>
+</page>

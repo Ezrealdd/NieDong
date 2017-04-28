@@ -1,0 +1,11 @@
+#logout{
+  background-color: #ffab27;
+  color: #000;
+  position: absolute;
+  left: 10%;
+  top: 20%;
+  width: 80%;
+}
+page{
+  font-family: "Microsoft YaHei";
+}

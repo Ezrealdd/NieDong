@@ -782,11 +782,11 @@ connection.prototype.open = function (options) {
                     icon: 'success',
                     duration: 1000
                 });
-                setTimeout(function () {
+                /*setTimeout(function () {
                     wx.redirectTo({
                         url: '/pages/home/home'
                     })
-                }, 1000);
+                }, 1000);*/
             }
             _login(data.data, conn);
         };

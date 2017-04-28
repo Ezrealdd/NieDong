@@ -66,6 +66,7 @@ page{
   border-radius: 0px;
 }
 .item{
+  z-index: 1000;
   width: 30rpx;
   height: 60rpx;
 }

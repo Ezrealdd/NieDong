@@ -16,7 +16,7 @@ Page({
     onLoad: function () {
         /*app.globalData.testmsg = "瞎测试"
         console.log(app.globalData)*/
-        console.log(app.globalData.backMessageType)
+        //console.log(app.globalData.backMessageType)
 
         /*function nextPage() {
             if(app.globalData.backMessageType==11){
@@ -25,14 +25,16 @@ Page({
                 })
             }
         }*/
-        var setTimeoutId = setTimeout(function nextPage() {
+    
+        var setInervalId = setInterval(function nextPage() {
             if(app.globalData.backMessageType==11){
-                console.log("司机接单")
+                console.log("司机接单")               
                 wx.redirectTo({
                     url: '/pages/haveOrder/haveOrder'
                 })
+                clearInterval(setInervalId)
             }
-        },10000);
+        },3000);
 
 
     },

@@ -1,8 +1,6 @@
-require('./utils/strophe')
+var WebIM = require('./utils/WebIM.js')
+var strophe = require('./utils/strophe.js')
 var WebIM = require('./utils/WebIM.js').default
-var strophe = require('utils/strophe.js')
-var WebIM = require('utils/WebIM.js')
-var WebIM = WebIM.default
 //app.js
 App({
   /*  getRoomPage: function () {
@@ -18,6 +16,10 @@ App({
         userInfo:null,
         backMessageType: '',
 		driverInfo: '',
+		onCar: '',
+        driverLocation: '',
+		endTrip: '',
+		endMessage: ''
     },
 	onLaunch:function(){   //小程序初始化的时候执行一次。以后不主动调用不会再执行。
 		var that = this;
@@ -47,8 +49,16 @@ App({
                         console.log("司机接单")
                         that.globalData.backMessageType = backMessage.type
 						that.globalData.driverInfo = backMessage
-					}else if(backMessage.type == 8){    //司机实时位置
-
+					}else if(backMessage.type == 6){    //司机实时位置
+						console.log("乘客上车")
+						that.globalData.onCar = backMessage.type
+					}else if(backMessage.type == 8){
+						console.log('司机位置')
+                        that.globalData.driverLocation = backMessage.type
+					}else if(backMessage.type == 9){
+                        console.log('订单结束')
+                        that.globalData.endTrip = backMessage.type
+						that.globalData.endMessage = backMessage
 					}
             },
 			onError: function (error) {

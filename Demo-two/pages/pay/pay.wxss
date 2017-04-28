@@ -1,4 +1,4 @@
-.origin,.end,.pay-message{
+page{
   font-family: "Microsoft YaHei";
 }
 .pay-message{
@@ -14,4 +14,12 @@
 .paynum{
   font-size: 70rpx;
   color: #ffab27;
+}
+.evaluate-btn{
+  margin-top: 20%
+}
+#endTrip{
+  width: 80%;
+  background-color: #ffab27;
+  color: #000;
 }

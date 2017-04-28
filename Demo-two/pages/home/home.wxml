@@ -4,12 +4,15 @@
     <view class="home-head"><!--个人中心按钮-->
         <view class="drawer-screen" bindtap="hideModal" wx:if="{{showModalStatus}}"></view>
         <view animation="{{animationData}}" class="drawer-attr-box" wx:if="{{showModalStatus}}">
-            <view class="drawer-attr-content">
+            <view class="drawer-attr-content content-align">
                 <view class="text-center">
-                    <image class="drawer-image" src="../../images/example.png"></image>
+                    <image class="drawer-image" src="{{driverHead}}"></image>
                 </view>
-                <view class="drawer-desc">{{testData}}</view>
-                <view class="drawer-desc">555555555</view>
+                <view class="drawer-desc">{{userPhone}}</view>
+                <view class="drawer-desc rule" bindtap="payRule">计价规则</view>
+                <view class="line"></view>
+                <view class="drawer-desc" bindtap="setting">设置</view>
+                <view class="line"></view>
             </view>
         </view>
 

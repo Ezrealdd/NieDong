@@ -16,4 +16,7 @@
             <text class="paytext">总金额</text>
         </view>
     </view>
+    <view class="evaluate-btn">
+        <button id="endTrip" type="primary" formType="submit" bindtap="endTrip">线下支付</button>
+    </view>
 </page>

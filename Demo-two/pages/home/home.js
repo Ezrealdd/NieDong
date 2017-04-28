@@ -11,7 +11,6 @@ var WebIM = WebIM.default
 Page({
 	data:{
 		//text：“这是一个页面”
-        testData: '66666',
 		buttonDisabled: false,
 		modalHidden: true,
 		show: false,
@@ -30,8 +29,26 @@ Page({
 		},
 		userInfo: '',
         tokenUrl:  'https://syjpp.txzkeji.com/passenger/token',
-        apiUrl:  'https://syjpp.txzkeji.com/passenger/api'
+        apiUrl:  'https://syjpp.txzkeji.com/passenger/api',
+		driverHead: '../../images/passenger.png',
+		userPhone: ''
 	},
+	onLoad: function () {
+		var that=this
+		var userPhone = ''
+		try{
+			var value=wx.getStorageSync('userPhone')
+			if(value){
+				userPhone = value
+			}
+		}catch (e){
+			console.log("获取电话失败")
+		}
+        var  userPhoneCopy = userPhone.substr(0,3) + '****' + userPhone.substr(7,11)
+		that.setData({
+            userPhone: userPhoneCopy
+		})
+    },
 	showModal: function(){
 		//显示覆盖层
 		var animation = wx.createAnimation({
@@ -132,7 +149,7 @@ Page({
          	console.log('失败')
 		 }
 
-         var userToken='';     //获取storage中的user_token
+         var userToken=0;     //获取storage中的user_token
 		 try{
 		 	var value=wx.getStorageSync('userInfo')
 			 if(value){
@@ -146,7 +163,7 @@ Page({
 		 }
 		 //console.log(userToken);
 
-		 var hxUserToken ='';
+		 var hxUserToken =0;
 		 try{
 		 	var value=wx.getStorageSync('hxUserToken')
 			 if(value){
@@ -158,6 +175,9 @@ Page({
                  url: '/pages/login/login'
              })
 		 }
+		/*console.log(tokenArr);
+		console.log(userToken);
+		console.log(hxUserToken);*/
 
         var ranString=getApi.randomString(12);
         var ranStringCode = getApi.randomString(12);   //申请验证码时候的随机字符串
@@ -195,12 +215,14 @@ Page({
         }
 
         console.log(hxUserToken)
-		if(userToken==null){
+		if(userToken==0){
+			console.log("userToken为空")
 			wx.redirectTo({
 				url: '/pages/login/login'
 			})
-		}else if(hxUserToken==null){
-            wx.redirectTo({
+		}else if(hxUserToken==0){
+            console.log("hxUserToken为空")
+			wx.redirectTo({
                 url: '/pages/login/login'
             })
 		}else{
@@ -243,66 +265,20 @@ Page({
                 }
             })
 		}
-
-
-        /*if(userToken || hxUserToken){     //判断token是否存在
-            /!*var options={
-            	apiUrl: WebIM.config.apiURL,
-				accessToken: hxUserToken,
-				appkey: 'txzkj#shayijiao'
-			}
-			WebIM.conn.open(options);*!/
-
-			wx.request({
-                url: that.data.apiUrl,
-                data: {
-                    access_token : tokenArr[0],
-                    format : 'JSON',
-                    method : 'user.order.create',
-                    once : ranStringCode,
-                    post_body :orderCode,
-                    secret_token : tokenArr[1],
-                    timestamp : timestampToken,
-                    user_token : userToken,
-                    version : '0.1',
-                    sign : createSignCode()
-                },
-                header:{
-                    "content-type": "application/x-www-form-urlencoded"
-                },
-                method: "POST",
-                success:function (res) {
-                    console.log(res)
-                    //var isCall=res.data.result.success;
-                    if(res.data.result.success==1){
-                        wx.redirectTo({
-                            url: '/pages/wait/wait'
-                        })
-                        wx.setStorage({
-                            key:'order_num',
-                            data:res.data.result.order_num
-                        })
-                    }else{
-                        wx.showModal({
-                            title:'叫车失败，请重试！',
-                            confirmText:'OK',
-                            showCancel:false
-                        })
-                    }
-                }
-            })
-		}else{
-            wx.redirectTo({
-                url: '/pages/login/login'
-            })
-		}*/
-
-
-
     },
 	makePhoneCall: function (e) {
         wx.makePhoneCall({
-            phoneNumber: '10086'
+            phoneNumber: '400-000-6777'
+        })
+    },
+    payRule: function () {
+		wx.navigateTo({
+			url: '/pages/rule/rule'
+		})
+    },
+    setting: function () {
+        wx.navigateTo({
+            url: '/pages/logout/logout'
         })
     }
 

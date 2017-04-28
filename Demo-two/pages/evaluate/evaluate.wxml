@@ -2,10 +2,10 @@
 <page>
 <view class="megBlock">
      <view class="head">
-         <image class="headImage" src="../../images/example.png"></image>
+         <image class="headImage" src="{{driverImage}}"></image>
      </view>
      <view class="carNum">
-         <text>渝B92T85</text>
+         <text>{{driverCard}}</text>
      </view>
      <view class="star-block">
          <block wx:for="{{headStars}}" wx:for-item="item" class="star-block">
@@ -18,17 +18,17 @@
 </view>
 <view class="score">
     <block wx:for="{{stars}}">
-          <image class="star-image" bindtap="clickstar" style="left: {{item*60}}rpx" src="{{key > item ?(key-item == 0.5?halfSrc:selectedSrc) : normalSrc}}">
-            <view class="item" style="left:0rpx" data-key="{{item+0.5}}" bindtap="selectLeft"></view>
-            <view class="item" style="left:30rpx" data-key="{{item+1}}" bindtap="selectRight"></view>
+          <image class="star-image" style="left: {{item*60}}rpx" src="{{key > item ?(key-item == 0.5?halfSrc:selectedSrc) : normalSrc}}">
+             <view class="item" style="left:0rpx" data-key="{{item+0.5}}" bindtap="selectLeft"></view>
+             <view class="item" style="left:30rpx" data-key="{{item+1}}" bindtap="selectRight"></view>
           </image>
     </block>
 </view>
 
 <view class="comment">
     <form bindsubmit="bindFormSubmit">
-        <textarea class="textarea-body" name="textarea" placeholder="老子不爽" />
-        <button form-type="submit" class="submit-btn">提交</button>
+        <textarea class="textarea-body" name="textarea" placeholder="请输入评价内容" />
+        <button form-type="submit" class="submit-btn" >提交</button>
     </form>
 </view>
 

@@ -1,14 +1,16 @@
 {
 "pages":[
-	"pages/home/home",
-	"pages/login/login",
-	"pages/trip/trip",
-	"pages/wait/wait",
 	"pages/evaluate/evaluate",
-	"pages/complaint/complaint",
 	"pages/map/map",
+	"pages/home/home",
+	"pages/trip/trip",
+	"pages/login/login",
+	"pages/wait/wait",
 	"pages/pay/pay",
-	"pages/haveOrder/haveOrder"
+	"pages/complaint/complaint",
+	"pages/haveOrder/haveOrder",
+	"pages/rule/rule",
+	"pages/logout/logout"
 	],
 "window":{
 	"backgroundTextStyle" : "light",
