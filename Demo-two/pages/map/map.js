@@ -15,12 +15,12 @@ Page({
         driverId: '',
         driverCard: '',
         markers: [{
-            iconPath: "../../images/taxi.png",
+            iconPath: "",
             id: 0,
             latitude: '',
             longitude: '',
-            width: 8,
-            height: 10
+            width: '',
+            height: ''
         }],
         /*polyline: [{
             points: [{
@@ -34,20 +34,20 @@ Page({
             width: 2,
             dottedLine: true
         }],*/
-        controls: [{
+        /*controls: [{
             id: 1,
             iconPath: '../../images/cancel.png',
             position: {
-                left: 28,
-                top: 500,
-                width: 350,
-                height: 50
+                left: '',
+                top: '',
+                width: '',
+                height: ''
             },
             clickable: true
-        }],
+        }],*/
         token: '',
         userInfo: '',
-        apiUrl: 'https://syjpp.txzkeji.com/passenger/api'
+        apiUrl: 'https://syjp.txzkeji.com/passenger/api'
 
     },
     starCount: function (originStars) {
@@ -67,6 +67,25 @@ Page({
     },
     onLoad: function (options) {    //页面加载的时候先加载地图
         var that=this
+        wx.getSystemInfo({
+            success: function (res) {
+                that.setData({
+                    controls:[{
+                        id: 1,
+                        iconPath: '../../images/cancel.png',
+                        position: {
+                          left: (res.screenWidth / 10) - (res.screenWidth / 27),
+                          top: (res.screenHeight/10) + (res.screenHeight/10)*5.9,
+                          width: res.screenWidth - 45,
+                          height: (res.screenHeight/10) - 20
+                        },
+                        clickable: true
+                    }]
+                })
+            }
+
+        })
+
         wx.getLocation({     //获取当前位置，打开地图
             type: 'wgs84',
             success: function(res) {
@@ -90,7 +109,6 @@ Page({
         console.log(that.starCount(starNum));
         that.setData({     //修改页面显示值
             stars : that.starCount(starNum),
-            driverImage : driverInfo.attache.driver_cover,
             driverPhone : driverInfo.attache.driver_phone,
             driverId : driverInfo.attache.driver_id,
             driverCard: driverInfo.attache.number_plate
@@ -130,7 +148,7 @@ Page({
             console.log("获取user_token失败")
         }
         that.setData({
-            stars: starArray,
+            stars: that.starCount(starNum),
             token: tokenArr,
             userInfo: userToken
         })
@@ -157,7 +175,7 @@ Page({
             return mdCopy.md5(signCode);
         }
 
-        wx.request({
+        wx.request({     //获取司机位置
             url: that.data.apiUrl,
             data: {
                 access_token : tokenArr[0],
@@ -184,8 +202,8 @@ Page({
                         id: 0,
                         latitude: driverLocation[1],
                         longitude: driverLocation[0],
-                        width: 50,
-                        height: 50
+                        width: 32,
+                        height: 40
                     }]
                 })
             }
@@ -197,6 +215,20 @@ Page({
                     url: '/pages/trip/trip'
                 });
                 clearInterval(setInervalId)
+            }else if(app.globalData.driverCancel == 3){
+                wx.showToast({
+                    title: '司机取消订单',
+                    icon: 'cancel',
+                    duration: 5000
+                });
+               setTimeout(function () {
+                   wx.redirectTo({
+                       url: '/pages/home/home'
+                   });
+               },4000)
+                clearInterval(setInervalId)
+            }else{
+              console.log("没收到消息")
             }
         },3000);
 
@@ -231,8 +263,14 @@ Page({
         var ranString=getApi.randomString(12);
         var ranStringCode = getApi.randomString(12);   //申请验证码时候的随机字符串
         var timestampToken = new Date().getTime();   //生成时间戳
-        var orderObj = {order_number : order_number,reason : '取消订单',type: '1'}
+        var orderObj = {
+            order_number : order_number,
+            reason : '取消订单',
+            type: '1'
+        }
         var orderCode = JSON.stringify(orderObj)
+        console.log(orderCode)
+        console.log(typeof(orderCode))
 
         function createSignCode() {    //获取接口的sign
             var params=[];
@@ -255,7 +293,7 @@ Page({
             data: {
                 access_token : tokenArr[0],
                 format : 'JSON',
-                method : 'user.lbs.getpoint',
+                method : 'user.order.cancel',
                 once : ranStringCode,
                 post_body :orderCode,
                 secret_token : tokenArr[1],
@@ -270,9 +308,11 @@ Page({
             method: "POST",
             success: function (res) {
                 console.log(res)
-                wx.redirectTo({
-                    url: '/pages/home/home'
-                })
+                if(res.data.result.success == 1){
+                    wx.redirectTo({
+                        url: '/pages/home/home'
+                    })
+                }
             }
         })
         /*wx.redirectTo({

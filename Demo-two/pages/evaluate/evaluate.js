@@ -20,7 +20,7 @@ Page({
         driverCard: '',
         token: '',
         userInfo: '',
-        apiUrl: 'https://syjpp.txzkeji.com/passenger/api'
+        apiUrl: 'https://syjp.txzkeji.com/passenger/api'
     },
     starCount: function (orginStars) {
        var starNum = orginStars*10/10, stars =[],i=0;
@@ -41,20 +41,20 @@ Page({
       var that=this
 
         var driverInfo = app.globalData.driverInfo
-        //var starNum = driverInfo.attache.driver_server_score
+        var starNum = driverInfo.attache.driver_server_score
         //var image = driverInfo.attache.driver_cover
-        //var driverPhone = driverInfo.attache.driver_phone
-        //var driverId = driverInfo.attache.driver_id
-        //var driverCard = driverInfo.attache.number_plate
+        var driverPhone = driverInfo.attache.driver_phone
+        var driverId = driverInfo.attache.driver_id
+        var driverCard = driverInfo.attache.number_plate
 
-        var starNum = 3.5;
         var headStars = that.starCount(starNum)
         that.setData({     //修改页面显示值
             headStars : headStars,
-            //driverPhone : driverInfo.attache.driver_phone,
-            //driverId : driverInfo.attache.driver_id,
-            //driverCard: driverInfo.attache.number_plate
+            driverPhone : driverInfo.attache.driver_phone,
+            driverId : driverInfo.attache.driver_id,
+            driverCard: driverInfo.attache.number_plate
         });
+
     },
     selectLeft: function (e) {     //乘客点击评分
         var that = this
@@ -68,6 +68,7 @@ Page({
         that.setData({
             key: key
         })
+        console.log(count)
 
     },
     selectRight: function(e){
@@ -78,6 +79,7 @@ Page({
         that.setData({
             key: key
         })
+        console.log(count)
     },
 
     makeCall: function (e) {   //投诉电话
@@ -88,7 +90,8 @@ Page({
     },
     bindFormSubmit: function (e) {    //提交评价返回主界面
         var that = this
-        console.log(e.detail.value.textarea);
+        var text = e.detail.value.textarea   //评价内容
+        console.log(text);
         var tokenArr=[];    //获取storage里面的token
         try{
             var value=wx.getStorageSync('token')
@@ -113,22 +116,22 @@ Page({
         try{
             var value=wx.getStorageSync('order_num')
             if(value){
-                userToken=value;
+                order_number=value;
             }
         }catch(e){
             console.log('order_num错误')
 
         }
 
-
+        console.log(that.data.key)
         var ranString=getApi.randomString(12);
         var ranStringCode = getApi.randomString(12);   //申请验证码时候的随机字符串
         var timestampToken = new Date().getTime();   //生成时间戳
         var orderObj = {
-               driver_id : that.data.driverId,
+               driverid : that.data.driverId,
                order: order_number,
-               content: '',
-               score: '5'
+               content: text,
+               score: that.data.key
         }
         var orderCode = JSON.stringify(orderObj)
 
@@ -136,7 +139,7 @@ Page({
             var params=[];
             params[0]= 'access_token='+tokenArr[0];
             params[1]= 'format=JSON';
-            params[2]= 'method=user.lbs.getpoint';
+            params[2]= 'method=user.user.comment';
             params[3]= 'once='+ranStringCode;
             params[4]= 'post_body='+orderCode;
             params[5]= 'secret_token='+tokenArr[1];
@@ -168,6 +171,10 @@ Page({
             method: "POST",
             success: function (res) {
                 console.log(res)
+                console.log(app.globalData.onCar)
+
+                app.globalData.onCar = null
+                console.log(app.globalData.onCar)
                 wx.redirectTo({
                     url: '/pages/home/home'
                 })

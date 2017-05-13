@@ -10,7 +10,7 @@
     </view>
     <view class="pay-message">
         <view class="pay-num">
-            <text class="paynum">${{payNum}}</text>
+            <text class="paynum">￥{{payNum}}</text>
         </view>
         <view class="pay-text">
             <text class="paytext">总金额</text>

@@ -50,6 +50,9 @@ page{
 .star-image{
   width: 60rpx;
   height: 60rpx;
+  position: absolute;
+  margin-left: 30%;
+  top: 25%;
 }
 .score{
   text-align: center;
@@ -59,14 +62,19 @@ page{
   border: 1rpx solid #000;
   width: 85%;
   margin-left: 7%;
-  margin-top: 5%;
+  margin-top: 15%;
 }
 .submit-btn{
   background-color: #ffab27;
   border-radius: 0px;
 }
 .item{
-  z-index: 1000;
-  width: 30rpx;
+  width: 60rpx;
   height: 60rpx;
+  position: absolute;
+  margin-left: 30%;
+  top: 25%;
+}
+#formText{
+  position: absolute;
 }

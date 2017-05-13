@@ -1,12 +1,12 @@
 {
 "pages":[
-	"pages/evaluate/evaluate",
-	"pages/map/map",
-	"pages/home/home",
+  "pages/home/home",
+  "pages/login/login",
 	"pages/trip/trip",
-	"pages/login/login",
 	"pages/wait/wait",
+  "pages/map/map",
 	"pages/pay/pay",
+	"pages/evaluate/evaluate",
 	"pages/complaint/complaint",
 	"pages/haveOrder/haveOrder",
 	"pages/rule/rule",

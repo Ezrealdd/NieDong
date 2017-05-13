@@ -25,7 +25,7 @@
     </block>
 </view>
 
-<view class="comment">
+<view class="comment" id="formText">
     <form bindsubmit="bindFormSubmit">
         <textarea class="textarea-body" name="textarea" placeholder="请输入评价内容" />
         <button form-type="submit" class="submit-btn" >提交</button>

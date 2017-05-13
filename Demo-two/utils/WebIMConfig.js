@@ -17,19 +17,21 @@ let config = {
     /*
      * XMPP server
      */
-    xmppURL: 'wss://im-api.easemob.com/ws/',
+    xmppURL: 'wss://im-api-vip6.easemob.com/ws/',
     // xmppURL: '172.17.3.122:5280',
     /*
      * Backend REST API URL
      */
     // apiURL: (location.protocol === 'https:' ? 'https:' : 'http:') + '//a1.easemob.com',
     // ios must be https!!! by lwz
-    apiURL: 'https://a1.easemob.com',
+    apiURL: 'https://a1-vip6.easemob.com',
+    ///miaoshare/shayijiao/messages
     // apiURL: (location.protocol === 'https:' ? 'https:' : 'http:') + '//172.17.3.155:8080',
     /*
      * Application AppKey
      */
-    appkey: '1143170404115272#shayijiao',
+    appkey: 'miaoshare#shayijiao',
+        //'1143170404115272#shayijiao',
     /*
      * Whether to use HTTPS      '1177161227178308#xcx'
      * @parameter {Boolean} true or false

@@ -1,10 +1,33 @@
 /**index.wxss**/
-@import "../common/lib/weui.wxss";
 .home-page{
     padding: 20%;
 }
-.mapStyle{
-    margin-top: 8%;
+@media(min-width: 320px){
+    #map{
+        width: 100%;
+        height: 440px;
+    }
+    .mapStyle{
+        margin-top: 1%;
+    }
+}
+@media(min-width: 375px){
+    #map{
+        width: 100%;
+        height: 520px;
+    }
+    .mapStyle{
+        margin-top: 3%;
+    }
+}
+@media(min-width: 414px){
+    #map{
+        width: 100%;
+        height: 600px;
+    }
+    .mapStyle{
+        margin-top: 2%;
+    }
 }
 .headImage{
     width: 100rpx;

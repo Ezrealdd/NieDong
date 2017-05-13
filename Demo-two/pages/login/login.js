@@ -9,14 +9,14 @@ var WebIM = WebIM.default
 var app = getApp()  //获取应用实例
 Page({
 	data: {
-      motto: '登录',
+      motto: '请登录叫车',
 /*	  pickerHidden: true,
 	  chosen: '',*/
 	  userPhone: '',
 	  checkNumber: '',
       grant_type: 'password',
-      tokenUrl:  'https://syjpp.txzkeji.com/passenger/token',
-      apiUrl:  'https://syjpp.txzkeji.com/passenger/api'
+      tokenUrl:  'https://syjp.txzkeji.com/passenger/token',
+      apiUrl:  'https://syjp.txzkeji.com/passenger/api'
   },
   onLoad: function () {
 	  //this.login()
@@ -205,7 +205,7 @@ Page({
                               user: passengerId,
                               pwd: '123456',
                               //grant_type: 'password',
-                              appKey: 'txzkj#shayijiao'
+                              appKey: 'miaoshare#shayijiao'
                           }
                           console.log('open')
                           WebIM.conn.open(options)
@@ -217,7 +217,7 @@ Page({
                                       key:"hxUserToken",
                                       data:message.accessToken
                                   })
-							   },
+							   }
 
 						  })
 

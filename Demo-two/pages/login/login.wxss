@@ -37,6 +37,9 @@ page{
 	width: 70%;
 	margin-left: 0;
 }
+#check-number{
+	width: 65%;
+}
 .label-phone,.label-check-number{
 	display: flex;
 	flex-direction: column;
@@ -60,7 +63,8 @@ page{
 	margin-top: 5%;
 }
 #phone,#check-number,#check-number-btn{
-	border: 1rpx solid #ffab27;
+	border: 1rpx solid #888888;
+	border-radius: 5px;
 }
 #check-number-btn{
 	color: #ffab27;
@@ -69,8 +73,10 @@ page{
 	width: 70%;
 }
 #check-number-btn{
-	margin-left: 60%;
-	margin-top: 15%;
+	margin-left: 16%;
+	margin-top: 2%;
+	height: 96%;
+	width: 120%;
 }
 #phone,#check-number{
 	display: block;

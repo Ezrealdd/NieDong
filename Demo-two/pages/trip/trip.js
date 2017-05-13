@@ -4,10 +4,18 @@ var getApi = require('../../utils/util.js')
 var mdCopy = require('../../utils/md5_copy.js')
 Page({
     data: {
+        scale: 16,
         longitude: '',
         latitude: '',
         markers: [{
-            iconPath: "../../images/driver.png",
+            iconPath: "",
+            id: 0,
+            latitude: '',
+            longitude: '',
+            width: 50,
+            height: 50
+        },{
+            iconPath: "",
             id: 0,
             latitude: '',
             longitude: '',
@@ -25,25 +33,32 @@ Page({
             },
             clickable: true
         }],
-        apiUrl: 'https://syjpp.txzkeji.com/passenger/api'
+        apiUrl: 'https://syjp.txzkeji.com/passenger/api'
 
     },
     onLoad: function () {
         var that=this
         wx.getLocation({
-            type: 'gcj02',
+            type: 'wgs84',
             success: function (res) {
                 that.setData({
                     longitude: res.longitude,
                     latitude: res.latitude,
-                    markers: [{
+                    /*markers: [{
                         iconPath: "",
                         id: 0,
                         latitude: res.latitude,
                         longitude: res.longitude,
                         width: 50,
                         height: 50
-                    }],
+                    },{
+                        iconPath: "../../images/destnation.png",
+                        id: 0,
+                        latitude: '',
+                        longitude: '',
+                        width: 50,
+                        height: 50
+                    }],*/
                 })
 
             }
@@ -93,8 +108,8 @@ Page({
             return mdCopy.md5(signCode);
         }
 
-        var driverLocation=setInterval(function getDriverLocation() {   //刷新司机位置
 
+        var driverLocation=setInterval(function getDriverLocation() {   //刷新司机位置
             if(app.globalData.driverLocation==8){
                 console.log("司机位置")
                 wx.request({
@@ -118,16 +133,30 @@ Page({
                     success: function (res) {
                         console.log(res)
                         var driverLocation = res.data.result.location
+                        var endPoint = res.data.result.end_point
+                        var endPointArr = JSON.parse(endPoint)
+                        console.log(driverLocation)
+                        console.log(endPointArr)
+                        console.log(that.data.markers)
                         that.setData({
+                            scale: 13,
                             markers: [{
-                                iconPath: "../../images/driver.png",
-                                id: 0,
+                                iconPath: "../../images/taxi.png",
+                                id: 1,
                                 latitude: driverLocation[1],
                                 longitude: driverLocation[0],
-                                width: 50,
-                                height: 50
-                            }]
+                                width: 32,
+                                height: 40
+                            },{
+                                iconPath: "../../images/destnation.png",
+                                id: 2,
+                                latitude: endPointArr[1],
+                                longitude: endPointArr[0],
+                                width: 40,
+                                height: 40
+                                }]
                         })
+                        console.log(that.data.markers)
                     }
                 })
             }

@@ -11,7 +11,7 @@ var WebIM=WebIM.default
 Page({
     data:{
         title: '正在为您优先叫车...',
-        apiUrl: 'https://syjpp.txzkeji.com/passenger/api'
+        apiUrl: 'https://syjp.txzkeji.com/passenger/api'
     },
     onLoad: function () {
         /*app.globalData.testmsg = "瞎测试"

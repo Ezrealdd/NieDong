@@ -420,6 +420,7 @@ var _loginCallback = function (status, msg, conn) {
             conn.handelSendQueue();
         }, 200);
         var handleMessage = function (msginfo) {
+            console.log(msginfo)
             var type = _parseMessageType(msginfo);
             if ('received' === type) {
                 conn.handleReceivedMessage(msginfo);
@@ -794,7 +795,7 @@ connection.prototype.open = function (options) {
             console.log('error', res, xhr, msg)
             conn.clear();
             wx.showModal({
-                title: '用户名或密码错误!',
+                title: '验证码错误!',
                 showCancel: false,
                 confirmText: 'OK'
             });
