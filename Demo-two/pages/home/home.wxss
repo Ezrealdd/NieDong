@@ -22,7 +22,7 @@ button-hover[type="primary"]{
     background-color: #996600;
 }
 .home-body{
-    margin-top: 150rpx;
+    margin-top: 55rpx;
 }
 button[type="primary"]{
      color: #000000;
@@ -38,17 +38,19 @@ button[type="primary"]{
 }
 #locationName,#destinationName{
     background-color: #ffffff;
-    border-style: solid;
     border-color: #ffab27;
-    font-size: 14px;
+    font-size: 37rpx;
+    width: 130%;
+    text-align: center;
+    margin-left: -15%;
 }
 .btn::after{
     border: 1px solid rgba(0,0,0,0);
 }
 .head-btn{
-    width: 32%;
-    padding-left: 0;
-    padding-right: 0;
+    width: 80px;
+    height: 60px;
+    margin-top: -20%;
     margin-left: -34%;
 }
 /*.user-number{
@@ -64,6 +66,7 @@ button[type="primary"]{
         position: fixed;
         margin-top: 35%;
         margin-left: -9%;
+        font-size: 18px;
     }
 }
 @media(min-width: 321px){
@@ -71,6 +74,7 @@ button[type="primary"]{
         position: fixed;
         margin-top: 48%;
         margin-left: -9%;
+         font-size: 21px;
     }
 }
 @media(min-width: 376px){
@@ -78,6 +82,7 @@ button[type="primary"]{
         position: fixed;
         margin-top: 58%;
         margin-left: -9%;
+        font-size: 25px;
     }
     .line{
         display: inline-block;
@@ -117,13 +122,13 @@ button[type="primary"]{
     text-align: center;
 }
 .drawer-image{
-    width: 120rpx;
+    width: 131rpx;
     height: 120rpx;
     margin-top: 10%;
 }
 .drawer-desc{
     font-size: 35rpx;
-    margin: 5rpx;
+    margin: 30rpx;
 }
 .btn{
     width: 80%;
@@ -160,4 +165,24 @@ page{
         margin-top: 5%;
     }
 
+}
+
+.phone{
+  width: 147rpx;
+  height: 31rpx;
+  position: absolute;
+  top: 96%;
+  left: 37%;
+}
+.title{
+  text-align: center;
+  padding-bottom: 15%;
+  font-size: 45rpx;
+}
+.des-btn{
+  margin-top: 50rpx;
+}
+#makeCall{
+  width: 130%;
+  margin-left: -15%;
 }

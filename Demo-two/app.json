@@ -1,11 +1,11 @@
 {
 "pages":[
   "pages/home/home",
+  "pages/pay/pay",
   "pages/login/login",
 	"pages/trip/trip",
 	"pages/wait/wait",
   "pages/map/map",
-	"pages/pay/pay",
 	"pages/evaluate/evaluate",
 	"pages/complaint/complaint",
 	"pages/haveOrder/haveOrder",

@@ -38,7 +38,8 @@ App({
 
       onOpened: function (message) {    //打开环信连接
         console.log("登录成功0000000000")
-        console.log(message)
+        //console.log(message)
+        conn.setPresence(); 
         wx.setStorage({    //存储环信返回的access_token
           key: "hxUserToken",
           data: message.accessToken
@@ -46,7 +47,7 @@ App({
       },
       onTextMessage: function (message) {     //接收文本消息
         console.log("22222")
-        console.log('onTextMessage', message)
+        //console.log('onTextMessage', message)
         var backMessage = JSON.parse(message.data)
         if (backMessage.type == 11) {     //司机已接单
           console.log("司机接单")
@@ -67,10 +68,6 @@ App({
           that.globalData.driverCancel = backMessage.type
         }
       },
-      onEmojiMessage: function (message) {
-        console.log("9999999")
-        console.log(message)
-       },
       onError: function (error) {
         if (error.type == WebIM.statusCode.WEBIM_CONNCTION_DISCONNECTED) {
           if (WebIM.conn.autoReconnectNumTotal < WebIM.conn.autoReconnectNumMax) {

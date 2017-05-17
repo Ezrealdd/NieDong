@@ -171,7 +171,7 @@ Page({
                       success: function(res){
                           console.log(res);
                           var passengerId = res.data.result.hx_user;
-                          console.log(passengerId)
+                          //console.log(passengerId)
                           wx.setStorage({     //返回的用户数据保存到本地存储
                               key:"userInfo",
                               data:res.data.result.user_token
@@ -189,7 +189,7 @@ Page({
                               username: passengerId,
                               password: '123456',
                               nickname: 'nickname',
-                              appKey: 'txzkj#shayijiao',
+                              appKey: 'miaoshare#shayijiao',
                               success: function () {
 
                               },
@@ -199,7 +199,8 @@ Page({
                               apiUrl:WebIM.config.apiURL
                           };
                           WebIM.utils.registerUser(options);*/
-
+                          
+                          console.log(passengerId)
                           var options = {    //登录环信
                               apiUrl: WebIM.config.apiURL,
                               user: passengerId,
@@ -209,7 +210,20 @@ Page({
                           }
                           console.log('open')
                           WebIM.conn.open(options)
+                          
+                          WebIM.conn.listen({      //连接成功回调函数
+                            onOpened: function (message) {    //打开环信连接
+                              console.log("登录成功0000000000")
+                              console.log(message)
+                              conn.setPresence();
+                              wx.setStorage({    //存储环信返回的access_token
+                                key: "hxUserToken",
+                                data: message.accessToken
+                              })
+                            }
 
+                          })
+                            
 						  WebIM.conn.listen({      //连接成功回调函数
 						  	   onOpened: function(message){    //打开环信连接
 						  	   	  console.log(message)

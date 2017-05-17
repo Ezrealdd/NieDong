@@ -2,7 +2,8 @@
 * 退出登录
 * */
 
-
+var WebIM = require('../../utils/WebIM.js')
+var WebIM = WebIM.default
 var app = getApp()
 var getApi=require('../../utils/util.js')
 var mdCopy=require('../../utils/md5_copy.js')
@@ -20,7 +21,8 @@ Page({
         }catch (e){
             //清除缓存失败
         }
-
+        
+        WebIM.conn.close();
         wx.redirectTo({
             url: '/pages/home/home'
         })

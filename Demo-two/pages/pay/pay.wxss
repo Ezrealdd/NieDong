@@ -23,3 +23,24 @@ page{
   background-color: #ffab27;
   color: #000;
 }
+.origin{
+  color: #ffab27;
+  margin-top: 15%;
+  margin-left: 9%;
+}
+.end{
+  color: #868383;
+  margin-top: 3%;
+  margin-left: 9%;
+}
+.line{
+    display: inline-block;
+    width: 90%;
+    height: 1rpx;
+    background-color: #868383;
+    margin-left: 5%;
+}
+.marker{
+  font-size: 28px;
+  color: #ffab27;
+}

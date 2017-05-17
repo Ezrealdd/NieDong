@@ -11,6 +11,8 @@ var WebIM = WebIM.default
 Page({
   data: {
     //text：“这是一个页面”
+    phone: '../../images/customPhone.png',
+    customer: '../../images/customerCenter.png',
     buttonDisabled: false,
     modalHidden: true,
     show: false,
@@ -28,7 +30,7 @@ Page({
       address: ''
     },
     userInfo: '',
-    tokenUrl: 'https://syjpp.txzkeji.com/passenger/token',
+    tokenUrl: 'https://syjp.txzkeji.com/passenger/token',
     apiUrl: 'https://syjp.txzkeji.com/passenger/api',
     driverHead: '../../images/passenger.png',
     userPhone: ''
@@ -217,12 +219,12 @@ Page({
     console.log(hxUserToken)
     if (userToken == 0) {
       console.log("userToken为空")
-      wx.redirectTo({
+      wx.navigateTo({
         url: '/pages/login/login'
       })
     } else if (hxUserToken == 0) {
       console.log("hxUserToken为空")
-      wx.redirectTo({
+      wx.navigateTo({
         url: '/pages/login/login'
       })
     } else {

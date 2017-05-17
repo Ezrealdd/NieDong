@@ -5584,7 +5584,6 @@ var $pres = null;
                     // //console.log('onSocketMessage', msg, JSON.stringify(msg))
                     self.socket.onmessage.call(self, msg);
                     //测试微信是否收到消息
-                    console.log('收到消息')
                 })
                 wx.onSocketClose(function () {
                     console.log('WebSocket连接已经关闭!')

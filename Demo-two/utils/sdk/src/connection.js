@@ -420,7 +420,6 @@ var _loginCallback = function (status, msg, conn) {
             conn.handelSendQueue();
         }, 200);
         var handleMessage = function (msginfo) {
-            console.log(msginfo)
             var type = _parseMessageType(msginfo);
             if ('received' === type) {
                 conn.handleReceivedMessage(msginfo);

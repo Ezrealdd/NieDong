@@ -46,7 +46,7 @@ page{
 	align-items: center;
 }
 #check-number-btn{
-	font-size: 69%;
+	font-size: 92%;
 	width: 100%;
 	margin-left: 0;
 	margin-right: 0;
