@@ -162,7 +162,7 @@ Page({
             }
         },5000)
 
-        var setInervalEnd = setInterval(function nextPage() {
+        /*var setInervalEnd = setInterval(function nextPage() {
             if(app.globalData.endTrip==9){
                 console.log('付钱')
                 wx.redirectTo({
@@ -171,7 +171,33 @@ Page({
                 clearInterval(driverLocation)
                 clearInterval(setInervalEnd)
             }
-        },3000)
+        },3000)*/
+        var setInervalEnd = setInterval(function nextPage() {
+          if (app.globalData.backMessage.type == 9) {
+            //var endMessage = app.globalData.endMessage  //订单结束的消息
+            console.log('付钱', app.globalData.backMessage)
+
+            wx.setStorage({      //订单起始位置
+              key: "origin",
+              data: app.globalData.backMessage.attache.order_start_address
+            })
+            wx.setStorage({      //订单结束位置
+              key: "end",
+              data: app.globalData.backMessage.attache.order_end_address
+            })
+            wx.setStorage({      //订单付款信息
+              key: "payNum",
+              data: app.globalData.backMessage.attache.money
+            })
+
+            wx.redirectTo({
+              url: '/pages/pay/pay'
+            });
+            clearInterval(driverLocation)
+            clearInterval(setInervalEnd)
+          }
+        }, 9000)
+
 
     },
     regionchange(e) {

@@ -96,7 +96,7 @@ Page({
     var that = this
     wx.chooseLocation({
       success: function (res) {
-        console.log(res)
+        //console.log(res)
         that.setData({
           hasLocation: true,
           location: {

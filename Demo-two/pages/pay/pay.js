@@ -13,10 +13,21 @@ Page({
    onLoad: function () {
        var that =this
        var endMessage = ''
-       var setInervalId = setInterval(function nextPage() {
+       var origin = wx.getStorageSync('origin');
+       var end = wx.getStorageSync('end');
+       var payNum = wx.getStorageSync('payNum');
+       that.setData({
+         origin: origin,
+         end: end,
+         payNum: payNum
+       })
+
+
+
+       /*var setInervalId = setInterval(function nextPage() {
            if(app.globalData.endTrip==9){
                console.log("里程结束")
-               endMessage = app.globalData.endMessage
+               var endMessage = app.globalData.endMessage
                console.log(endMessage)
                that.setData({
                    origin: endMessage.attache.order_start_address,
@@ -26,7 +37,7 @@ Page({
 
                clearInterval(setInervalId)
            }
-       },3000);
+       },3000);*/
 
    },
 

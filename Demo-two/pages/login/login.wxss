@@ -73,10 +73,9 @@ page{
 	width: 70%;
 }
 #check-number-btn{
-	margin-left: 16%;
-	margin-top: 2%;
-	height: 96%;
-	width: 120%;
+	margin-left: 5%;
+	height: 90rpx;
+	width: 185rpx;
 }
 #phone,#check-number{
 	display: block;

@@ -1,8 +1,8 @@
 {
 "pages":[
   "pages/home/home",
-  "pages/pay/pay",
   "pages/login/login",
+  "pages/pay/pay",
 	"pages/trip/trip",
 	"pages/wait/wait",
   "pages/map/map",
