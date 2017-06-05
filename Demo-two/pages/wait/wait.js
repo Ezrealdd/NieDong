@@ -27,7 +27,7 @@ Page({
         }*/
     
         var setInervalId = setInterval(function nextPage() {
-            if(app.globalData.backMessageType==11){
+            if(app.globalData.backMessage.type==11){
                 console.log("司机接单")               
                 wx.redirectTo({
                     url: '/pages/haveOrder/haveOrder'

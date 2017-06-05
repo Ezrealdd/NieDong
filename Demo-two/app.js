@@ -64,8 +64,8 @@ App({
           that.globalData.backMessageType = backMessage.type
           that.globalData.driverInfo = backMessage
         }else if (backMessage.type == 6) {    //司机实时位置
-          console.log("乘客上车")
-          that.globalData.onCar = backMessage.type
+          console.log("乘客上车", backMessage)
+          //that.globalData.onCar = backMessage.type
         } else if (backMessage.type == 8) {
           console.log('司机位置')
           that.globalData.driverLocation = backMessage.type
@@ -75,7 +75,7 @@ App({
           //that.globalData.endMessage = backMessage
         } else if (backMessage.type == 3) {
           console.log('司机取消')
-          that.globalData.driverCancel = backMessage.type
+          //that.globalData.driverCancel = backMessage.type
         }
       },
       onError: function (error) {

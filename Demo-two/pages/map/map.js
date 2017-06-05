@@ -210,12 +210,13 @@ Page({
         })
 
         var setInervalId = setInterval(function nextPage() {
-            if(app.globalData.onCar==6){
+          if (app.globalData.backMessage.type==6){
+                console.log(app.globalData.backMessage)
                 wx.redirectTo({
                     url: '/pages/trip/trip'
                 });
                 clearInterval(setInervalId)
-            }else if(app.globalData.driverCancel == 3){
+          } else if (app.globalData.backMessage.type == 3){
                 wx.showToast({
                     title: '司机取消订单',
                     icon: 'cancel',

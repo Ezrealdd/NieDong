@@ -51,7 +51,7 @@ page{
   width: 60rpx;
   height: 60rpx;
   position: absolute;
-  margin-left: 30%;
+  margin-left: 19%;
   top: 25%;
 }
 .score{
@@ -77,4 +77,10 @@ page{
 }
 #formText{
   position: absolute;
+}
+.textarea-body{
+  width: 545rpx;
+  height: 150px;
+  display: block;
+  position: relative;
 }

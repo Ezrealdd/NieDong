@@ -17,7 +17,11 @@ Page({
     checkNumber: '',
     grant_type: 'password',
     tokenUrl: 'https://syjp.txzkeji.com/passenger/token',
-    apiUrl: 'https://syjp.txzkeji.com/passenger/api'
+    apiUrl: 'https://syjp.txzkeji.com/passenger/api',
+    checkTime: '获取验证码',
+    isDisabled: false,
+    wait: 30
+
   },
   onLoad: function () {
     //this.login()
@@ -34,52 +38,60 @@ Page({
       checkNumber: e.detail.value
     })
   },
+ /* checkTime: function(){    //验证码获取函数
+    var that=this
+    var wait = 30;
+    if (wait == 30) {
+      console.log('发送请求')
+      that.setData({
+        isDisabled: false,
+        checkTime: 30
+      })
+    }
+    if (wait == 0) {
+      console.log("重新获取")
+      that.setData({
+        isDisabled: true,
+        checkTime: wait
+      })
+    } else {
+      that.setData({
+        isDisabled: true,
+        checkTime: '重新获取'
+      })
+      wait--;
+      // setTimeout(that.checkTime(), 1000)
+    }
 
+  },*/
 
   getCheckNum: function (e) {    //点击获得验证码
     var that = this
-    console.log(that.data.userPhone);
-    var testCode = getApi.getToken(that.data.userPhone);
-    console.log(testCode);
-
-    //var timestamp = new Date().getTime()
-    //console.log(timestamp)
-    //console.log(getApi.randomString(12))
-    //var tokenTest = getApi.createSign()
-	  /*wx.login({
-	  	success: function(e){
-	  		console.log(e);
-
-	  		wx.getUserInfo({
-	  			success: function(res2){
-	  				console.log(res2);
-	  				var encryptedData = encodeURIComponent(res2.encryptedData);
-	  				var iv = res2.iv;
-
-                    wx.request({
-                        //url: 'https://api.weixin.qq.com/sns/jscode2session',
-                        url: 'https://syjp.txzkeji.com/user.wx.wxlogin',
-                        data: {
-                            code: e.code,
-                            signatrue: res2.signatrue,
-                            rawData: res2.rawData,
-                            iv: res2.iv,
-                            encryptedData: res2.encryptedData
-                        },
-                        header:{
-                            "content-type": "application/x-www-form-urlencoded"
-                        },
-                        method: 'POST',
-                        success: function(res){
-                            console.log(res);
-                        }
-                    });
-				}
-			});
-
-		}
-	  });*/
-
+    //console.log(that.data.userPhone);
+  
+    //console.log(testCode);
+     if(that.data.wait == 30){
+       console.log('发送请求')
+       var testCode = getApi.getToken(that.data.userPhone);
+       console.log(testCode);
+     }
+     if (that.data.wait == 0){
+       console.log("重新获取")
+       that.setData({
+         isDisabled: false,
+         checkTime: '获取验证码',
+       })
+       that.data.wait = 30
+     }else{
+       console.log("不能获取")
+       that.setData({
+         isDisabled: true,
+         checkTime: that.data.wait
+       })
+       that.data.wait--;
+       var setTimeoutId = setTimeout(function (){that.getCheckNum()}, 1000)
+     }
+	
   },
 
   login: function (e) {
@@ -205,15 +217,15 @@ Page({
               WebIM.utils.registerUser(options);*/
 
               //console.log(passengerId)
-             /* var options = {    //登录环信
-                apiUrl: WebIM.config.apiURL,
-                user: passengerId,
-                pwd: '123456',
-                //grant_type: 'password',
-                appKey: 'miaoshare#shayijiao'
-              }
-              console.log('open')
-              WebIM.conn.open(options) */
+              /* var options = {    //登录环信
+                 apiUrl: WebIM.config.apiURL,
+                 user: passengerId,
+                 pwd: '123456',
+                 //grant_type: 'password',
+                 appKey: 'miaoshare#shayijiao'
+               }
+               console.log('open')
+               WebIM.conn.open(options) */
 
               /*WebIM.conn.listen({      //连接成功回调函数
                 onOpened: function (message) {    //打开环信连接
@@ -246,6 +258,7 @@ Page({
                 wx.redirectTo({
                   url: '/pages/home/home'
                 })
+          
               } else if (res.data.result.success == 101) {
                 console.log(res);
                 wx.showModal({

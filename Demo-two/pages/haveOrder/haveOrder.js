@@ -11,6 +11,6 @@ Page({
             wx.redirectTo({
                 url: '/pages/map/map'
             })
-        }, 3000);
+        }, 2000);
     }
 })

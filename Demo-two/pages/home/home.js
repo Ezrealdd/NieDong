@@ -53,6 +53,7 @@ Page({
   },
   showModal: function () {
     //显示覆盖层
+    
     var animation = wx.createAnimation({
       duration: 400,
       timingFunction: "linear",
@@ -70,6 +71,8 @@ Page({
         animationData: animation.export()
       })
     }.bind(this), 200)
+
+
   },
   hideModal: function () {
     //隐藏覆盖层
@@ -94,7 +97,62 @@ Page({
   choseLocation: function (e) {    //选择当前位置
     //console.log(e)
     var that = this
-    wx.chooseLocation({
+   console.log("登录")
+
+    var userToken = 0;    //获取usertoken是否存在
+    try {
+      var value = wx.getStorageSync('userInfo')
+      if (value) {
+        userToken = value;
+      }
+    } catch (e) {
+      console.log('user_token错误')
+    }
+    
+    var hxUserToken = 0;  //获取环信token是否存在
+    try {
+      var value = wx.getStorageSync('hxUserToken')
+      if (value) {
+        hxUserToken = value;
+      }
+    } catch (e) {
+      console.log('hxUserToken获取失败')
+    }
+
+    if (userToken == 0) {
+      console.log("userToken为空")
+      wx.navigateTo({
+        url: '/pages/login/login'
+      })
+    } else if (hxUserToken == 0) {
+      console.log("hxUserToken为空")
+      wx.navigateTo({
+        url: '/pages/login/login'
+      })
+    }else{
+      wx.chooseLocation({
+        success: function (res) {
+          //console.log(res)
+          that.setData({
+            hasLocation: true,
+            location: {
+              longitude: res.longitude,
+              latitude: res.latitude,
+              name: res.name,
+              address: res.address
+            },
+          })
+        },
+        fail: function () {
+          console.log('选择错误')
+        },
+        compete: function () {
+          console.log('选择失败')
+        }
+      })
+    }
+
+   /* wx.chooseLocation({
       success: function (res) {
         //console.log(res)
         that.setData({
@@ -113,7 +171,8 @@ Page({
       compete: function () {
         console.log('选择失败')
       }
-    })
+    })*/
+
   },
   choseDestination: function (e) {   //选择目的地
     //console.log(e)
@@ -163,7 +222,6 @@ Page({
         url: '/pages/login/login'
       })
     }
-    //console.log(userToken);
 
     var hxUserToken = 0;
     try {
@@ -216,18 +274,6 @@ Page({
       return mdCopy.md5(signCode);
     }
 
-    console.log(hxUserToken)
-    if (userToken == 0) {
-      console.log("userToken为空")
-      wx.navigateTo({
-        url: '/pages/login/login'
-      })
-    } else if (hxUserToken == 0) {
-      console.log("hxUserToken为空")
-      wx.navigateTo({
-        url: '/pages/login/login'
-      })
-    } else {
       wx.request({
         url: that.data.apiUrl,
         data: {
@@ -266,7 +312,7 @@ Page({
           }
         }
       })
-    }
+    
   },
   makePhoneCall: function (e) {
     wx.makePhoneCall({

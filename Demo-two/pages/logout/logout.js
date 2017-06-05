@@ -24,8 +24,11 @@ Page({
         
         WebIM.conn.close();
         wx.redirectTo({
-            url: '/pages/home/home'
+          url: '/pages/home/home',
         })
+        /*wx.navigateBack({
+          delta: 3
+        })*/
 
         /*wx.getStorageInfo({
             success: function (res) {

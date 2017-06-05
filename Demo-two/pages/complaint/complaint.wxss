@@ -14,8 +14,11 @@ page{
   margin-top: 5%;
 }
 .star-image{
-  width: 90rpx;
-  height: 90rpx;
+  width: 60rpx;
+  height: 60rpx;
+  position: absolute;
+  margin-left: 19%;
+  top: 30%;
 }
 .star{
   text-align: center;
@@ -28,7 +31,7 @@ page{
   border: 1rpx solid #000;
   width: 85%;
   margin-left: 7%;
-  margin-top: 5%;
+  margin-top: 25%;
 }
 .submit-btn{
   background-color: #ffab27;
@@ -54,4 +57,17 @@ page{
   position: absolute;
   left: 67%;
   top: 230rpx;
+}
+.item{
+  width: 60rpx;
+  height: 60rpx;
+  position: absolute;
+  margin-left: 30%;
+  top: 25%;
+}
+.textarea-body{
+  width: 640rpx;
+  height: 150px;
+  display: block;
+  position: relative;
 }

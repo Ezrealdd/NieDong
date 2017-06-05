@@ -20,14 +20,14 @@
         <block class="starBlock" wx:for="{{stars}}">
             <image class="star-image" style="left:{{item*100}}rpx" src="{{key>item?(key-item == 0.5?halfSrc:selectedSrc):normalSrc}}">
               <view class="item" style="left:0rpx" data-key="{{item+0.5}}" bindtap="selectLeft"></view>
-              <view class="item" style="left:50rpx" data-key="{{item+1}}" bindtap="selectRight"></view>
+              <view class="item" style="left:30rpx" data-key="{{item+1}}" bindtap="selectRight"></view>
             </image>
         </block>
     </view>
 
     <view class="comment">
         <form bindsubmit="bindFormSubmit">
-            <textarea class="textarea-body" name="textarea" placeholder="老子不爽" />
+            <textarea class="textarea-body" name="textarea" placeholder="请输入评价内容" />
             <button form-type="submit" class="submit-btn">提交</button>
         </form>
     </view>

@@ -1,5 +1,6 @@
 {
 "pages":[
+  "pages/complaint/complaint",
   "pages/home/home",
   "pages/login/login",
   "pages/pay/pay",
@@ -7,7 +8,6 @@
 	"pages/wait/wait",
   "pages/map/map",
 	"pages/evaluate/evaluate",
-	"pages/complaint/complaint",
 	"pages/haveOrder/haveOrder",
 	"pages/rule/rule",
 	"pages/logout/logout"

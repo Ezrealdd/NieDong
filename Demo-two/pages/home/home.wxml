@@ -21,7 +21,7 @@
         <view class="title">您好，您想去哪儿？</view>
         <form catchsunmit="openLocation">
             <view class=" " catchtap="choseLocation">
-                    <button id="locationName" type="primary" formType="submit">{{location.name}}</button>
+                    <button id="locationName"  type="primary" formType="submit">{{location.name}}</button>
             </view>
 
             <view class="des-btn " catchtap="choseDestination">
